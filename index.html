@@ -122,7 +122,28 @@
 				$("[title*='aachen']").click(function s(){
 										$(".aachen").toggle();
 										if($("#nachtigallehrenfeld").is( ":hidden" )) {
-																													$("#nachtigallehrenfeld").toggle();
+															$("#bonnefooiEVENTS").hide();
+				$("#bonnefooiCLICK").css('width', $("#bonnefooiEVENTS").css("width"));				
+			 $("#bonnefooiCLICK").click(function s(){
+										$("#bonnefooi").toggle();
+										$("#bonnefooiEVENTS").toggle();
+										$("#bonnefooiCLICK").css('height', bh);
+			  });
+				
+												$("#fusebrusselsEVENTS").hide();
+				$("#fusebrusselsCLICK").css('width', $("#fusebrusselsEVENTS").css("width"));				
+			 $("#fusebrusselsCLICK").click(function s(){
+										$("#fusebrussels").toggle();
+										$("#fusebrusselsEVENTS").toggle();
+										$("#fusebrusselsCLICK").css('height', bh);
+			  });
+												$("#ConcreteParisEVENTS").hide();
+				$("#ConcreteParisCLICK").css('width', $("#ConcreteParisEVENTS").css("width"));				
+			 $("#ConcreteParisCLICK").click(function s(){
+										$("#ConcreteParis").toggle();
+										$("#ConcreteParisEVENTS").toggle();
+										$("#ConcreteParisCLICK").css('height', bh);
+			  });																										$("#nachtigallehrenfeld").toggle();
 																												}
 
 			  });
@@ -303,13 +324,39 @@ vertical-align: top; /*Makes sure all the divs are correctly aligned.*/
  
 </div><!--end of Holder-->
 </div><!--end of Container-->
-
 <div class="container">
 <h2>Brüssel.</h2>
+ <div class="holder">
+	<iframe id="bonnefooiEVENTS" src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fpg%2Fbonnefooi&tabs=events&width=500&height=499&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=false&appId" width="500" height="499" style="border:none;overflow:hidden;" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
+ 
+ 	<div id="bonnefooiCLICK" class="bar"></div>
+	<iframe id="bonnefooi" src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fbonnefooi%2F&tabs&width=500&height=70&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=false&appId" width="500" height="70" style="border:none;overflow:hidden;" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
+ 
+</div><!--end of Holder-->
+
+ <div class="holder">
+	<iframe id="fusebrusselsEVENTS" src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fpg%2Ffusebrussels&tabs=events&width=500&height=499&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=false&appId" width="500" height="499" style="border:none;overflow:hidden;" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
+ 
+ 	<div id="fusebrusselsCLICK" class="bar"></div>
+	<iframe id="fusebrussels" src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Ffusebrussels%2F&tabs&width=500&height=70&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=false&appId" width="500" height="70" style="border:none;overflow:hidden;" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
+ 
+</div><!--end of Holder-->
+
 
 
 </div><!--end of Container-->
+ <div class="container">
+<h2>Paris.</h2>
+ <div class="holder">
+	<iframe id="ConcreteParisEVENTS" src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fpg%2FConcreteParis&tabs=events&width=500&height=499&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=false&appId" width="500" height="499" style="border:none;overflow:hidden;" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
  
+ 	<div id="ConcreteParisCLICK" class="bar"></div>
+	<iframe id="ConcreteParis" src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FConcreteParis%2F&tabs&width=500&height=70&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=false&appId" width="500" height="70" style="border:none;overflow:hidden;" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
+ 
+</div><!--end of Holder-->
+
+
+</div><!--end of Container-->
  <!--
 
 	
