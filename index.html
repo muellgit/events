@@ -23,7 +23,7 @@
 
 				bh = $("#musikbunkeraachen").css('height');
 								$(".bar").css('height', bh);
-
+$("#hoeuropa").css('display', "block");
 			 $("#musikbunkeraachenCLICK").click(function s(){
 										$("#musikbunkeraachen").toggle();
 										$("#musikbunkeraachenEVENTS").toggle();
@@ -119,10 +119,7 @@
 										$("#muziekgieterijCLICK").css('height', bh);
 			  });
 
-				$("[title*='aachen']").click(function s(){
-										$(".aachen").toggle();
-										if($("#nachtigallehrenfeld").is( ":hidden" )) {
-															$("#bonnefooiEVENTS").hide();
+												$("#bonnefooiEVENTS").hide();
 				$("#bonnefooiCLICK").css('width', $("#bonnefooiEVENTS").css("width"));				
 			 $("#bonnefooiCLICK").click(function s(){
 										$("#bonnefooi").toggle();
@@ -143,9 +140,24 @@
 										$("#ConcreteParis").toggle();
 										$("#ConcreteParisEVENTS").toggle();
 										$("#ConcreteParisCLICK").css('height', bh);
-			  });																										$("#nachtigallehrenfeld").toggle();
-																												}
+			  });
+				
+				$("[title*='aachen']").click(function s(){
+									$(".aachen").each(function(i, obj){
 
+									if ( $(this).css('display') == 'none')
+									{
+										$("iframe[id*='EVENTS']").show();
+										$(".aachen").hide();
+										
+									}
+									else
+									{
+										$("iframe[id*='EVENTS']").hide();
+										$(".aachen").show();
+									
+									}
+							});
 			  });
 								$("[title*='koeln']").click(function s(){
 										$("#nachtigallehrenfeld").toggle();
@@ -203,11 +215,11 @@ vertical-align: top; /*Makes sure all the divs are correctly aligned.*/
 <h2 title="aachen">Aachen.</h2>
 
 <div class="holder">
-		<iframe class="aachen" id="musikbunkeraachenEVENTS" src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fpg%2Fmusikbunkeraachen&tabs=events&width=500&height=499&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=false&appId" width="500" height="499" style="border:none;overflow:hidden;" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
+		<iframe id="musikbunkeraachenEVENTS" src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fpg%2Fmusikbunkeraachen&tabs=events&width=500&height=499&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=false&appId" width="500" height="499" style="border:none;overflow:hidden;" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
 
 
 
-	<div id="musikbunkeraachenCLICK" class="bar">
+	<div id="musikbunkeraachenCLICK" class="bar"  >
 	</div>
 		<iframe class="aachen" id="musikbunkeraachen" src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fmusikbunkeraachen%2F&tabs&width=500&height=70&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=false&appId" width="500" height="70" style="border:none;overflow:hidden;" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
  
@@ -215,9 +227,9 @@ vertical-align: top; /*Makes sure all the divs are correctly aligned.*/
  
  
  <div class="holder">
-	<iframe class="aachen" id="hoeuropaEVENTS" src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fpg%2Fho.europa&tabs=events&width=500&height=499&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=false&appId" width="500" height="499" style="border:none;overflow:hidden;" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
+	<iframe id="hoeuropaEVENTS" src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fpg%2Fho.europa&tabs=events&width=500&height=499&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=false&appId" width="500" height="499" style="border:none;overflow:hidden;" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
  
- 	<div id="hoeuropaCLICK" class="bar"></div>
+ 	<div id="hoeuropaCLICK" class="bar" ></div>
 	<iframe class="aachen" id="hoeuropa" src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fho.europa%2F&tabs&width=500&height=70&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=false&appId" width="500" height="70" style="border:none;overflow:hidden;" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
  
 </div><!--end of Holder-->
@@ -324,6 +336,7 @@ vertical-align: top; /*Makes sure all the divs are correctly aligned.*/
  
 </div><!--end of Holder-->
 </div><!--end of Container-->
+
 <div class="container">
 <h2>Brüssel.</h2>
  <div class="holder">
