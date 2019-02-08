@@ -143,18 +143,18 @@ $("#hoeuropa").css('display', "block");
 			  });
 				
 				$("[title*='aachen']").click(function s(){
-									$(".aachen").each(function(i, obj){
+									$("iframe[class*='aachen'][id*='EVENTS']").each(function(i, obj){
 
-									if ( $(this).css('display') == 'none')
+									if ( $(this).css('display') == 'none'  )
 									{
-										$("iframe[id*='EVENTS']").show();
-										$(".aachen").hide();
+										$("iframe[class*='aachen'][id*='EVENTS']").show();
+										$("iframe[class*='aachen']").not("[id*='EVENTS']").hide();
 										
 									}
 									else
 									{
-										$("iframe[id*='EVENTS']").hide();
-										$(".aachen").show();
+										$("iframe[class*='aachen'][id*='EVENTS']").hide();
+										$("iframe[class*='aachen']").not("[id*='EVENTS']").show();
 									
 									}
 							});
@@ -215,7 +215,7 @@ vertical-align: top; /*Makes sure all the divs are correctly aligned.*/
 <h2 title="aachen">Aachen.</h2>
 
 <div class="holder">
-		<iframe id="musikbunkeraachenEVENTS" src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fpg%2Fmusikbunkeraachen&tabs=events&width=500&height=499&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=false&appId" width="500" height="499" style="border:none;overflow:hidden;" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
+		<iframe class="aachen" id="musikbunkeraachenEVENTS" src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fpg%2Fmusikbunkeraachen&tabs=events&width=500&height=499&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=false&appId" width="500" height="499" style="border:none;overflow:hidden;" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
 
 
 
@@ -227,7 +227,7 @@ vertical-align: top; /*Makes sure all the divs are correctly aligned.*/
  
  
  <div class="holder">
-	<iframe id="hoeuropaEVENTS" src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fpg%2Fho.europa&tabs=events&width=500&height=499&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=false&appId" width="500" height="499" style="border:none;overflow:hidden;" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
+	<iframe class="aachen" id="hoeuropaEVENTS" src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fpg%2Fho.europa&tabs=events&width=500&height=499&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=false&appId" width="500" height="499" style="border:none;overflow:hidden;" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
  
  	<div id="hoeuropaCLICK" class="bar" ></div>
 	<iframe class="aachen" id="hoeuropa" src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fho.europa%2F&tabs&width=500&height=70&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=false&appId" width="500" height="70" style="border:none;overflow:hidden;" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
