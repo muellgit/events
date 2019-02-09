@@ -189,22 +189,22 @@ $(document).ready(function(){
 				
 				$(window).scroll(function() {
     if ($(this).scrollTop()) {
-        $("#toTop").fadeIn();
+        $("#toTop").fadeIn("slow", "swing");
     } else {
-        $("#toTop").fadeOut();
+        $("#toTop").fadeOut("slow", "swing");
     }
       if($(window).scrollTop() + $(window).height() < $(document).height() - $("#footer").height()) {
-        $('#toTop').css("position","fixed");    //resetting it
+        //$('#toTop').css("position","fixed");    //resetting it
         $('#toTop').css("bottom","0"); //resetting it
 }
         if($(window).scrollTop() + $(window).height() > $(document).height() - $("#footer").height()) {
-        $('#toTop').css("position","relative"); // make it related
-        $('#toTop').css("bottom","25px"); // 60 px, height of #toTop
+        //$('#toTop').css("position","relative"); // make it related
+        $('#toTop').css("bottom","38px"); // 60 px, height of #toTop
  }
     
     });
     $("#toTop").click(function() {
-    $("html, body").animate({scrollTop: 0}, 1000);
+    $("html, body").animate({scrollTop: 0}, 1300);
     });
 				
 				
@@ -285,9 +285,9 @@ height:100%;
 	content: " «";
  }
  
-.backtotop_button_wrap {width:100%; background:white; height:auto;}
-.backtotop_button_height {width:100%; height:20px;}
-#toTop {display:none; position: fixed; right:0; bottom:0; width:20px; height:auto; background:beige; float:right;padding:10px; text-align:center; border:1px solid black; line-height:12px;bottom: 20px;}
+.backtotop_button_wrap {width:100%;  height:auto;}
+.backtotop_button_height {width:100%; height:35px;}
+#toTop {display:none; position: fixed; right:0; bottom:0; width:20px; height:20px; background:beige; float:right !important;padding:2px; text-align:center; border:1px solid black; line-height:12px;bottom: 45px;}
 #footer {width:100%; height:35px; color:white; text-align:center; background:#313131; border-top:1px solid black;}
 .foot {
 height: 500px;
@@ -461,14 +461,43 @@ height: 500px;
 
 </div><!--end of Holder-->
 </div><!--end of Container--> 
-
+<style>
+.footer-menu {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+.footer-menu li {
+    display: inline;
+    padding-left: 10px;
+}
+.pull-left {
+		margin: 0;
+		padding: 0;
+    float: left !important;
+}
+.pull-right {
+		margin: 0;
+		padding: 0;
+    float: right !important;
+}
+</style>
 <div class="backtotop_button_wrap">
     <div class="backtotop_button_height">
     
     </div>
     </div>
-    <div id="footer">
-            亖
+    <div id="footer"><span style="text-align: center;">  亖</span>
+		
+						<p class="pull-left"><a href="https://muellgit.github.io/events/">fb-Veranstaltungen</a></p>
+          
+						<ul class="footer-menu pull-right">
+            <li><a href="https://muellgit.github.io/ueber-uns"></a></li>
+            <li><a href="https://muellgit.github.io/impressum">Kontakt</a></li>
+            <li><a href="https://muellgit.github.io/mpressum">Impressum</a></li>
+            <li><a href="https://muellgit.github.io/datenschutz">Datenschutz</a></li>
+            <li><a href="https://muellgit.github.io/agb">AGB</a></li>
+          </ul>         
         <div id="toTop" style="color: black">&#8613;</div>
      </div>
 </body>
