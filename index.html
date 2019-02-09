@@ -44,20 +44,15 @@ $(document).ready(function(){
 					$(this).toggleClass("special");
 				}
 		});
-		
-		
- 
- 
-  	//$("iframe").each(function(i, obj){
-					//if(!$(this).contents().find("body").length) {
-						// some html page loaded in iframe
-					//	$(this).append(" <b>Appended text</b>.");
-				//}
- //	});
- if(!$("#ReinekeFuchsCologneEVENTS").contents().find("body").length) {
-    // some html page loaded in iframe
-		$("#ReinekeFuchsCologneEVENTS").attr('src','error.png');
-}
+
+		$("iframe[id*='EVENTS']").each(function(i, obj){
+					 if(!$(this).contents().find("body").length) {
+							// some html page loaded in iframe
+							$(this).attr('src','error.png');
+					}
+		});
+				
+				
 				var bh = 0;
 				$(".holder").css('width', $("#musikbunkeraachenEVENTS").css("width"));
 				$(".bar").css('width', $("#musikbunkeraachenEVENTS").css("width"));
