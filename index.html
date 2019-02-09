@@ -4,6 +4,7 @@
  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
  <title>fb-Veranstaltungen</title>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="sty.css">
 </head>
 <body>
 <div id="fb-root"></div>
@@ -23,297 +24,272 @@ $(window).on("load", function() {
 
 		
 $(document).ready(function(){
+	/*
+    //City Swtich button
+    //
+    */
+    $("h2").click(function s(){
+        var c = $( this ).attr( "title" );
+        var action = "hide";
+        $("iframe[class*="+c+"][id*='EVENTS']").each(function(i, obj){
+                if ( $(this).css('display') == 'none'  ){
+                    action = "show";
+                    return;
+                }
+        });
+        if ( action == 'show'  ){
+            $("iframe[class*="+c+"][id*='EVENTS']").show();
+            $("iframe[class*="+c+"]:not([id*='EVENTS'])").hide();
+            $(this).toggleClass("special");
+        }
+        else{
+            $("iframe[class*="+c+"][id*='EVENTS']").hide();
+            $("iframe[class*="+c+"]:not([id*='EVENTS'])").show();
+            $(this).toggleClass("special");
+        }
+    });
+	/*
+    //Init boxes
+    //
+    */
+    var bh = 0;
+    $(".holder").css('width', $("#musikbunkeraachenEVENTS").css("width"));
+    $(".bar").css('width', $("#musikbunkeraachenEVENTS").css("width"));
+    bh = $("#musikbunkeraachen").css('height');
+    $(".bar").css('height', bh);
 
- 		$("h2").click(function s(){
-				var c = $( this ).attr( "title" );
-				var action = "hide";
-				$("iframe[class*="+c+"][id*='EVENTS']").each(function(i, obj){
-						if ( $(this).css('display') == 'none'  ){
-							action = "show";
-							return;
-						}
-				});
-				if ( action == 'show'  ){
-					$("iframe[class*="+c+"][id*='EVENTS']").show();
-					$("iframe[class*="+c+"]:not([id*='EVENTS'])").hide();
-					$(this).toggleClass("special");
-				}
-				else{
-					$("iframe[class*="+c+"][id*='EVENTS']").hide();
-					$("iframe[class*="+c+"]:not([id*='EVENTS'])").show();
-					$(this).toggleClass("special");
-				}
-		});
-				
-				
-				var bh = 0;
-				$(".holder").css('width', $("#musikbunkeraachenEVENTS").css("width"));
-				$(".bar").css('width', $("#musikbunkeraachenEVENTS").css("width"));
 
-				bh = $("#musikbunkeraachen").css('height');
-				$(".bar").css('height', bh);
-			 
-			 
-			 
-								$("#musikbunkeraachenEVENTS").hide();
-			 $("#musikbunkeraachenCLICK").click(function s(){
-										$("#musikbunkeraachen").toggle();
-										$("#musikbunkeraachenEVENTS").toggle();
-										$("#musikbunkeraachenCLICK").css('height', bh);
-			  });
-								$("#hoeuropaEVENTS").hide();
-			 $("#hoeuropaCLICK").css('width', $("#hoeuropaEVENTS").css("width"));		
-			 $("#hoeuropaCLICK").click(function s(){
-										$("#hoeuropa").toggle();
-										$("#hoeuropaEVENTS").toggle();
-										$("#hoeuropaCLICK").css('height', bh);
-			  });
-				
-								$("#GewoelbeklubEVENTS").hide();
-				$("#GewoelbeklubCLICK").css('width', $("#GewoelbeklubEVENTS").css("width"));				
-			 $("#GewoelbeklubCLICK").click(function s(){
-										$("#Gewoelbeklub").toggle();
-										$("#GewoelbeklubEVENTS").toggle();
-										$("#GewoelbeklubCLICK").css('height', bh);
-			  });
-												$("#ArtheaterEVENTS").hide();
-				$("#ArtheaterCLICK").css('width', $("#ArtheaterEVENTS").css("width"));				
-			 $("#ArtheaterCLICK").click(function s(){
-										$("#Artheater").toggle();
-										$("#ArtheaterEVENTS").toggle();
-										$("#ArtheaterCLICK").css('height', bh);
-			  });
-												$("#heinzgaul197EVENTS").hide();
-				$("#heinzgaul197CLICK").css('width', $("#heinzgaul197EVENTS").css("width"));				
-			 $("#heinzgaul197CLICK").click(function s(){
-										$("#heinzgaul197").toggle();
-										$("#heinzgaul197EVENTS").toggle();
-										$("#heinzgaul197CLICK").css('height', bh);
-			  });
-												$("#odonienEVENTS").hide();
-				$("#odonienCLICK").css('width', $("#odonienEVENTS").css("width"));				
-			 $("#odonienCLICK").click(function s(){
-										$("#odonien").toggle();
-										$("#odonienEVENTS").toggle();
-										$("#odonienCLICK").css('height', bh);
-			  });
-												$("#roxykoelnEVENTS").hide();
-				$("#roxykoelnCLICK").css('width', $("#roxykoelnEVENTS").css("width"));				
-			 $("#roxykoelnCLICK").click(function s(){
-										$("#roxykoeln").toggle();
-										$("#roxykoelnEVENTS").toggle();
-										$("#roxykoelnCLICK").css('height', bh);
-			  });
 
-								$("#ReinekeFuchsCologneEVENTS").hide();
-				$("#ReinekeFuchsCologneCLICK").css('width', $("#ReinekeFuchsCologneEVENTS").css("width"));				
-			 $("#ReinekeFuchsCologneCLICK").click(function s(){
-										$("#ReinekeFuchsCologne").toggle();
-										$("#ReinekeFuchsCologneEVENTS").toggle();
-										$("#ReinekeFuchsCologneCLICK").css('height', bh);
-			  });
-												$("#nachtigallehrenfeldEVENTS").hide();
-				$("#nachtigallehrenfeldCLICK").css('width', $("#nachtigallehrenfeldEVENTS").css("width"));				
-			 $("#nachtigallehrenfeldCLICK").click(function s(){
-										$("#nachtigallehrenfeld").toggle();
-										$("#nachtigallehrenfeldEVENTS").toggle();
-										$("#nachtigallehrenfeldCLICK").css('height', bh);
-			  });
-				
-												$("#thelabmaastrichtEVENTS").hide();
-				$("#thelabmaastrichtCLICK").css('width', $("#thelabmaastrichtEVENTS").css("width"));				
-			 $("#thelabmaastrichtCLICK").click(function s(){
-										$("#thelabmaastricht").toggle();
-										$("#thelabmaastrichtEVENTS").toggle();
-										$("#thelabmaastrichtCLICK").css('height', bh);
-			  });
+	/*
+    //boxes with fb-events
+    //
+    */
+                        $("#musikbunkeraachenEVENTS").hide();
+     $("#musikbunkeraachenCLICK").click(function s(){
+                                $("#musikbunkeraachen").toggle();
+                                $("#musikbunkeraachenEVENTS").toggle();
+                                $("#musikbunkeraachenCLICK").css('height', bh);
+      });
+                        $("#hoeuropaEVENTS").hide();
+     $("#hoeuropaCLICK").css('width', $("#hoeuropaEVENTS").css("width"));
+     $("#hoeuropaCLICK").click(function s(){
+                                $("#hoeuropa").toggle();
+                                $("#hoeuropaEVENTS").toggle();
+                                $("#hoeuropaCLICK").css('height', bh);
+      });
 
-								$("#complexmaastrichtEVENTS").hide();
-				$("#complexmaastrichtCLICK").css('width', $("#complexmaastrichtEVENTS").css("width"));				
-			 $("#complexmaastrichtCLICK").click(function s(){
-										$("#complexmaastricht").toggle();
-										$("#complexmaastrichtEVENTS").toggle();
-										$("#complexmaastrichtCLICK").css('height', bh);
-			  });
-			
-								$("#claydrummaastrichtEVENTS").hide();
-				$("#claydrummaastrichtCLICK").css('width', $("#claydrummaastrichtEVENTS").css("width"));				
-			 $("#claydrummaastrichtCLICK").click(function s(){
-										$("#claydrummaastricht").toggle();
-										$("#claydrummaastrichtEVENTS").toggle();
-										$("#claydrummaastrichtCLICK").css('height', bh);
-			  });
-								$("#muziekgieterijEVENTS").hide();
-				$("#muziekgieterijCLICK").css('width', $("#muziekgieterijEVENTS").css("width"));				
-			 $("#muziekgieterijCLICK").click(function s(){
-										$("#muziekgieterij").toggle();
-										$("#muziekgieterijEVENTS").toggle();
-										$("#muziekgieterijCLICK").css('height', bh);
-			  });
+                        $("#GewoelbeklubEVENTS").hide();
+        $("#GewoelbeklubCLICK").css('width', $("#GewoelbeklubEVENTS").css("width"));
+     $("#GewoelbeklubCLICK").click(function s(){
+                                $("#Gewoelbeklub").toggle();
+                                $("#GewoelbeklubEVENTS").toggle();
+                                $("#GewoelbeklubCLICK").css('height', bh);
+      });
+                                        $("#ArtheaterEVENTS").hide();
+        $("#ArtheaterCLICK").css('width', $("#ArtheaterEVENTS").css("width"));
+     $("#ArtheaterCLICK").click(function s(){
+                                $("#Artheater").toggle();
+                                $("#ArtheaterEVENTS").toggle();
+                                $("#ArtheaterCLICK").css('height', bh);
+      });
+                                        $("#heinzgaul197EVENTS").hide();
+        $("#heinzgaul197CLICK").css('width', $("#heinzgaul197EVENTS").css("width"));
+     $("#heinzgaul197CLICK").click(function s(){
+                                $("#heinzgaul197").toggle();
+                                $("#heinzgaul197EVENTS").toggle();
+                                $("#heinzgaul197CLICK").css('height', bh);
+      });
+                                        $("#odonienEVENTS").hide();
+        $("#odonienCLICK").css('width', $("#odonienEVENTS").css("width"));
+     $("#odonienCLICK").click(function s(){
+                                $("#odonien").toggle();
+                                $("#odonienEVENTS").toggle();
+                                $("#odonienCLICK").css('height', bh);
+      });
+                                        $("#roxykoelnEVENTS").hide();
+        $("#roxykoelnCLICK").css('width', $("#roxykoelnEVENTS").css("width"));
+     $("#roxykoelnCLICK").click(function s(){
+                                $("#roxykoeln").toggle();
+                                $("#roxykoelnEVENTS").toggle();
+                                $("#roxykoelnCLICK").css('height', bh);
+      });
 
-												$("#bonnefooiEVENTS").hide();
-				$("#bonnefooiCLICK").css('width', $("#bonnefooiEVENTS").css("width"));				
-			 $("#bonnefooiCLICK").click(function s(){
-										$("#bonnefooi").toggle();
-										$("#bonnefooiEVENTS").toggle();
-										$("#bonnefooiCLICK").css('height', bh);
-			  });
+                        $("#ReinekeFuchsCologneEVENTS").hide();
+        $("#ReinekeFuchsCologneCLICK").css('width', $("#ReinekeFuchsCologneEVENTS").css("width"));
+     $("#ReinekeFuchsCologneCLICK").click(function s(){
+                                $("#ReinekeFuchsCologne").toggle();
+                                $("#ReinekeFuchsCologneEVENTS").toggle();
+                                $("#ReinekeFuchsCologneCLICK").css('height', bh);
+      });
+                                        $("#nachtigallehrenfeldEVENTS").hide();
+        $("#nachtigallehrenfeldCLICK").css('width', $("#nachtigallehrenfeldEVENTS").css("width"));
+     $("#nachtigallehrenfeldCLICK").click(function s(){
+                                $("#nachtigallehrenfeld").toggle();
+                                $("#nachtigallehrenfeldEVENTS").toggle();
+                                $("#nachtigallehrenfeldCLICK").css('height', bh);
+      });
+
+                                        $("#thelabmaastrichtEVENTS").hide();
+        $("#thelabmaastrichtCLICK").css('width', $("#thelabmaastrichtEVENTS").css("width"));
+     $("#thelabmaastrichtCLICK").click(function s(){
+                                $("#thelabmaastricht").toggle();
+                                $("#thelabmaastrichtEVENTS").toggle();
+                                $("#thelabmaastrichtCLICK").css('height', bh);
+      });
+
+                        $("#complexmaastrichtEVENTS").hide();
+        $("#complexmaastrichtCLICK").css('width', $("#complexmaastrichtEVENTS").css("width"));
+     $("#complexmaastrichtCLICK").click(function s(){
+                                $("#complexmaastricht").toggle();
+                                $("#complexmaastrichtEVENTS").toggle();
+                                $("#complexmaastrichtCLICK").css('height', bh);
+      });
+
+                        $("#claydrummaastrichtEVENTS").hide();
+        $("#claydrummaastrichtCLICK").css('width', $("#claydrummaastrichtEVENTS").css("width"));
+     $("#claydrummaastrichtCLICK").click(function s(){
+                                $("#claydrummaastricht").toggle();
+                                $("#claydrummaastrichtEVENTS").toggle();
+                                $("#claydrummaastrichtCLICK").css('height', bh);
+      });
+                        $("#muziekgieterijEVENTS").hide();
+        $("#muziekgieterijCLICK").css('width', $("#muziekgieterijEVENTS").css("width"));
+     $("#muziekgieterijCLICK").click(function s(){
+                                $("#muziekgieterij").toggle();
+                                $("#muziekgieterijEVENTS").toggle();
+                                $("#muziekgieterijCLICK").css('height', bh);
+      });
+
+                                        $("#bonnefooiEVENTS").hide();
+        $("#bonnefooiCLICK").css('width', $("#bonnefooiEVENTS").css("width"));
+     $("#bonnefooiCLICK").click(function s(){
+                                $("#bonnefooi").toggle();
+                                $("#bonnefooiEVENTS").toggle();
+                                $("#bonnefooiCLICK").css('height', bh);
+      });
+
+                                        $("#fusebrusselsEVENTS").hide();
+        $("#fusebrusselsCLICK").css('width', $("#fusebrusselsEVENTS").css("width"));
+     $("#fusebrusselsCLICK").click(function s(){
+                                $("#fusebrussels").toggle();
+                                $("#fusebrusselsEVENTS").toggle();
+                                $("#fusebrusselsCLICK").css('height', bh);
+      });
+                                        $("#ConcreteParisEVENTS").hide();
+        $("#ConcreteParisCLICK").css('width', $("#ConcreteParisEVENTS").css("width"));
+     $("#ConcreteParisCLICK").click(function s(){
+                                $("#ConcreteParis").toggle();
+                                $("#ConcreteParisEVENTS").toggle();
+                                $("#ConcreteParisCLICK").css('height', bh);
+      });
 				
-												$("#fusebrusselsEVENTS").hide();
-				$("#fusebrusselsCLICK").css('width', $("#fusebrusselsEVENTS").css("width"));				
-			 $("#fusebrusselsCLICK").click(function s(){
-										$("#fusebrussels").toggle();
-										$("#fusebrusselsEVENTS").toggle();
-										$("#fusebrusselsCLICK").css('height', bh);
-			  });
-												$("#ConcreteParisEVENTS").hide();
-				$("#ConcreteParisCLICK").css('width', $("#ConcreteParisEVENTS").css("width"));				
-			 $("#ConcreteParisCLICK").click(function s(){
-										$("#ConcreteParis").toggle();
-										$("#ConcreteParisEVENTS").toggle();
-										$("#ConcreteParisCLICK").css('height', bh);
-			  });
-				
-				
-				$(window).scroll(function() {
-    if ($(this).scrollTop()) {
-        $("#toTop").fadeIn("slow", "swing");
-    } else {
-        $("#toTop").fadeOut("slow", "swing");
-    }
-      if($(window).scrollTop() + $(window).height() < $(document).height() - $("#footer").height()) {
-        //$('#toTop').css("position","fixed");    //resetting it
-        $('#toTop').css("bottom","0"); //resetting it
-}
+	/*
+    //Scroll up button
+    //
+    */
+    $(window).scroll(function() {
+        if ($(this).scrollTop()) {
+            $("#toTop").fadeIn("slow", "swing");
+        } else {
+            $("#toTop").fadeOut("slow", "swing");
+        }
+        if($(window).scrollTop() + $(window).height() < $(document).height() - $("#footer").height()) {
+            //$('#toTop').css("position","fixed");    //resetting it
+            $('#toTop').css("bottom","0"); //resetting it
+        }
         if($(window).scrollTop() + $(window).height() > $(document).height() - $("#footer").height()) {
-        //$('#toTop').css("position","relative"); // make it related
-        $('#toTop').css("bottom","38px"); // 60 px, height of #toTop
- }
-    
+            //$('#toTop').css("position","relative"); // make it related
+            $('#toTop').css("bottom","38px"); // 60 px, height of #toTop
+        }
     });
     $("#toTop").click(function() {
-    $("html, body").animate({scrollTop: 0}, 1300);
+        $("html, body").animate({scrollTop: 0}, 1300);
     });
 				
-				
-				
-				
-				var l = 0x0;
-				var fc = 0xf;
+	/*
+    //Light off button
+    //
+    */
+    var l = 0x0; //initialize to turn light off
+    var fc = 0xf; //initialize to make font color white
 
-				$("#but").click(function s(){
-							$("body").css("background-color", "#"+l.toString(16)+l.toString(16)+l.toString(16)+l.toString(16)+l.toString(16)+l.toString(16));
-							$("body").css("color", "#"+fc.toString(16)+fc.toString(16)+fc.toString(16)+fc.toString(16)+fc.toString(16)+fc.toString(16));
-							$(":after").css("color", "#"+fc.toString(16)+fc.toString(16)+fc.toString(16)+fc.toString(16)+fc.toString(16)+fc.toString(16));
-							if ( l == 0 ) { $(this).val('☀');
-																	$(this).css("color","orange");
-																	} 
-							else{$(this).val('👓');
-											//$(this).css("background-color","black");
-											}
-							fc = l;
-							l = Math.abs(l - 0xf);
-							var styleElem = document.head.appendChild(document.createElement("style"));
-							styleElem.innerHTML = "h2:after {color: "+"#"+l.toString(16)+l.toString(16)+l.toString(16)+l.toString(16)+l.toString(16)+l.toString(16)+" !important;}";
-			  });
+  $("#but").click(function s(){
+    //initial state causes
+    //black (paint = 000000) paint color and
+    //inverted color white (invert = ffffff)
+    var paint = l.toString(16)
+    +l.toString(16)+l.toString(16)+l.toString(16)+l.toString(16)+l.toString(16);
+    var invert = fc.toString(16)
+    +fc.toString(16)+fc.toString(16)+fc.toString(16)+fc.toString(16)+fc.toString(16);
+
+    //change colors and icons
+    $("a.ra").removeClass("ralogo-"+invert); $("a.ra").addClass("ralogo-"+paint);
+    $("body").css("background-color", "#"+paint);
+    $("body").css("color", "#"+invert);
+    $(":after").css("color", "#"+invert);
+    var styleElem = document.head.appendChild(document.createElement("style"));
+    styleElem.innerHTML = "h2:after {color: "+"#"+invert+" !important;}";
+    if ( l == 0 ) {
+        $(this).val('☀');
+        $(this).css("color","orange");
+    }
+    else{
+        $(this).val('👓');
+        //$(this).css("background-color","black");
+        }
+    //apply new switch state
+    fc = l;
+    l = Math.abs(l - 0xf);
+  });
+
+
+    /*
+    //Resident Advisor button
+    //
+    */
+    var d = new Date();
+    var year = d.getFullYear();
+    var month = d.getMonth() + 1;
+    var day = d.getDate();
+    $("a[class*='ra']").click(function() {
+        var url = "https://www.residentadvisor.net/events/de/"+$(this).attr('title')+"/week/"+year+"-"+month+"-"+day;
+        window.open(url, '_parent');
+    });
 			
 });
 </script>
 
-<style>
- html {
-  margin: 4px;
- }
- body{
- margin: 0;
- height: 100%;
-	background-color: white;
-	#padding-bottom:300px; 
-}
-.bar{
-    position:absolute;
-    top:0;
- #  left:0;
-    width:100%;
-   height:100%;
 
-		opacity: 0.2;}
-.bar:hover{
-    background: red;
-		}
-.holder{
-vertical-align: top; /*Makes sure all the divs are correctly aligned.*/
-    white-space: normal; /*Prevents child elements from inheriting nowrap.*/
-     float: left;
-    position:relative;
-}
-.frame{
-    width: 100%;
-    height:100%;
-    background :blue;
-}
-.container{
-height:100%;
- display: inline-block;	
- margin-bottom:20px; 
- }
- .but {
- background-color: white;
- font-size: 1.5em;
- font-family: Courier;
- }
- h2:after {
-	font: 0.2em;
-	color: black;
-	content: " »"
- }
- h2.special:after{
-	font: 0.2em;
-	color: black;
-	content: " «";
- }
- 
-.backtotop_button_wrap {width:100%;  height:auto;}
-.backtotop_button_height {width:100%; height:35px;}
-#toTop {display:none; position: fixed; right:0; bottom:0; width:20px; height:20px; background:beige; float:right !important;padding:2px; text-align:center; border:1px solid black; line-height:12px;bottom: 45px;}
-#footer {width:100%; height:35px; color:white; text-align:center; background:#313131; border-top:1px solid black;}
-.foot {
-height: 500px;
-#display: block;
-}
-</style>
 <h1>fb-veranstaltungen</h1>
-<input id="but"type="button" value="&#x1F453;" class="but"></input></br>
-
+<input id="but"type="button" value="&#x1F453;" class="but"></input>
 </br>
 <div class="container">
-<h2 title="aachen">Aachen.</h2>
-
+<div class="city">
+  <h2 class="pull-left" title="aachen">Aachen.</h2>
+  <a class="ra ralogo-ffffff pull-right" href="test.html"></a>
+ </div>
+<div class="holderCITY">
 <div class="holder">
 		<iframe class="aachen" id="musikbunkeraachenEVENTS" src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fpg%2Fmusikbunkeraachen&tabs=events&width=500&height=499&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=false&appId" width="500" height="499" style="border:none;overflow:hidden;" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
-
-
-
 	<div id="musikbunkeraachenCLICK" class="bar"  >
 	</div>
 		<iframe class="aachen" id="musikbunkeraachen" src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fmusikbunkeraachen%2F&tabs&width=500&height=70&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=false&appId" width="500" height="70" style="border:none;overflow:hidden;" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
- 
  </div><!--end of Holder-->
- 
- 
  <div class="holder">
 	<iframe class="aachen" id="hoeuropaEVENTS" src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fpg%2Fho.europa&tabs=events&width=500&height=499&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=false&appId" width="500" height="499" style="border:none;overflow:hidden;" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
  
  	<div id="hoeuropaCLICK" class="bar" ></div>
 	<iframe class="aachen" id="hoeuropa" src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fho.europa%2F&tabs&width=500&height=70&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=false&appId" width="500" height="70" style="border:none;overflow:hidden;" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
- 
 </div><!--end of Holder-->
 </div><!--end of Container-->
-
+</div>
 <div class="container">
-<h2 title="koeln">Köln.</h2>
+<div class="city">
+  <h2 class="pull-left" title="cologne">Köln.</h2>
+  <a class="ra ralogo-ffffff pull-right" href="test.html"></a>
+ </div>
 
-
+<div class="holderCITY">
  <div class="holder">
 	<iframe class="koeln" id="GewoelbeklubEVENTS" src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fpg%2FGewoelbeklub&tabs=events&width=500&height=499&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=false&appId" width="500" height="499" style="border:none;overflow:hidden;" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
  
@@ -338,28 +314,21 @@ height: 500px;
 	<iframe class="koeln"  id="heinzgaul197" src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fheinzgaul197%2F&tabs&width=500&height=70&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=false&appId" width="500" height="70" style="border:none;overflow:hidden;" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
  
 </div><!--end of Holder-->
- 
-
- 
 
 	  <div class="holder">
 	<iframe class="koeln"  id="odonienEVENTS" src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fpg%2Fodonien&tabs=events&width=500&height=499&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=false&appId" width="500" height="499" style="border:none;overflow:hidden;" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
  
  	<div id="odonienCLICK" class="bar"></div>
 	<iframe class="koeln"  id="odonien" src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fodonien%2F&tabs&width=500&height=70&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=false&appId" width="500" height="70" style="border:none;overflow:hidden;" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
- 
 </div><!--end of Holder-->
  
- 
- 
-  <div class="holder">
+   <div class="holder">
 	<iframe class="koeln"  id="roxykoelnEVENTS" src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fpg%2Froxykoeln&tabs=events&width=500&height=499&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=false&appId" width="500" height="499" style="border:none;overflow:hidden;" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
  
  	<div id="roxykoelnCLICK" class="bar"></div>
 	<iframe class="koeln"  id="roxykoeln" src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Froxykoeln%2F&tabs&width=500&height=70&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=false&appId" width="500" height="70" style="border:none;overflow:hidden;" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
  
 </div><!--end of Holder-->
-
 
 				 <div class="holder">
 	<iframe class="koeln"  id="ReinekeFuchsCologneEVENTS" src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fpg%2FReinekeFuchsCologne&tabs=events&width=500&height=499&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=false&appId" width="500" height="499" style="border:none;overflow:hidden;" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
@@ -374,14 +343,17 @@ height: 500px;
  
  	<div id="nachtigallehrenfeldCLICK" class="bar"></div>
 	<iframe class="koeln"  id="nachtigallehrenfeld" src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fnachtigall.ehrenfeld%2F&tabs&width=500&height=70&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=false&appId" width="500" height="70" style="border:none;overflow:hidden;" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
- 
 </div><!--end of Holder-->
 </div><!--end of Container-->
-
+</div>
 
 
 <div class="container">
-<h2 title="maastricht">Maastricht.</h2>
+<div class="city">
+  <h2 class="pull-left" title="maastricht">Maastricht.</h2>
+  <a class="ra ralogo-ffffff pull-right" href="test.html"></a>
+ </div>
+
 
  <div class="holder">
 	<iframe class="maastricht"  id="muziekgieterijEVENTS" src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fpg%2Fmuziekgieterij&tabs=events&width=500&height=499&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=false&appId" width="500" height="499" style="border:none;overflow:hidden;" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
@@ -419,7 +391,12 @@ height: 500px;
 </div><!--end of Container-->
 
 <div class="container">
-<h2 title="bruessel">Brüssel.</h2>
+<div class="city">
+  <h2 class="pull-left" title="bruessel">Brüssel.</h2>
+  <a class="ra ralogo-ffffff pull-right" href="test.html"></a>
+ </div>
+
+
  <div class="holder">
 	<iframe class="bruessel" id="bonnefooiEVENTS" src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fpg%2Fbonnefooi&tabs=events&width=500&height=499&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=false&appId" width="500" height="499" style="border:none;overflow:hidden;" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
  
@@ -435,12 +412,14 @@ height: 500px;
 	<iframe class="bruessel" id="fusebrussels" src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Ffusebrussels%2F&tabs&width=500&height=70&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=false&appId" width="500" height="70" style="border:none;overflow:hidden;" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
  
 </div><!--end of Holder-->
-
-
-
 </div><!--end of Container-->
+</br>
  <div class="container">
-<h2 title="paris">Paris.</h2>
+<div class="city">
+  <h2 class="pull-left" title="paris">Paris.</h2>
+  <a class="ra ralogo-ffffff pull-right" href="test.html"></a>
+ </div>
+
  <div class="holder foot">
 	<iframe class="paris" id="ConcreteParisEVENTS" src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fpg%2FConcreteParis&tabs=events&width=500&height=499&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=false&appId" width="500" height="499" style="border:none;overflow:hidden;" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
  
@@ -449,32 +428,11 @@ height: 500px;
 
 </div><!--end of Holder-->
 </div><!--end of Container--> 
-<style>
-.footer-menu {
-    padding: 0;
-    margin: 0;
-    list-style: none;
-}
-.footer-menu li {
-    display: inline;
-    padding-left: 10px;
-}
-.pull-left {
-		margin: 0;
-		padding: 0;
-    float: left !important;
-}
-.pull-right {
-		margin: 0;
-		padding: 0;
-    float: right !important;
-}
-</style>
+
 <div class="backtotop_button_wrap">
     <div class="backtotop_button_height">
-    
-    </div>
-    </div>
+   </div>
+ </div>
     <div id="footer"><span style="text-align: center;">  亖</span>
 		
 						<p class="pull-left"><a href="https://muellgit.github.io/events/">fb-Veranstaltungen</a></p>
