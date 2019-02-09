@@ -225,6 +225,8 @@ $(document).ready(function(){
 											}
 							fc = l;
 							l = Math.abs(l - 0xf);
+							var styleElem = document.head.appendChild(document.createElement("style"));
+							styleElem.innerHTML = "h2:after {color: "+"#"+l.toString(16)+l.toString(16)+l.toString(16)+l.toString(16)+l.toString(16)+l.toString(16)+" !important;}";
 			  });
 			
 });
