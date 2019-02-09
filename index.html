@@ -18,13 +18,6 @@
 $(window).on("load", function() {
 	//	alert("hihi");
 	//	alert($("iframe[class*='aachen'][id*='EVENTS']").css('display'));
-		function toggleCity(c, t){
-		
-		}
-	
-	
-
-
 });
 
 
@@ -43,12 +36,16 @@ $(document).ready(function(){
 				if ( action == 'show'  ){
 					$("iframe[class*="+c+"][id*='EVENTS']").show();
 					$("iframe[class*="+c+"]:not([id*='EVENTS'])").hide();
+					$(this).toggleClass("special");
 				}
 				else{
 					$("iframe[class*="+c+"][id*='EVENTS']").hide();
 					$("iframe[class*="+c+"]:not([id*='EVENTS'])").show();
+					$(this).toggleClass("special");
 				}
 		});
+		
+		
  
  
   	//$("iframe").each(function(i, obj){
@@ -61,9 +58,6 @@ $(document).ready(function(){
     // some html page loaded in iframe
 		$("#ReinekeFuchsCologneEVENTS").attr('src','error.png');
 }
-
-
-
 				var bh = 0;
 				$(".holder").css('width', $("#musikbunkeraachenEVENTS").css("width"));
 				$(".bar").css('width', $("#musikbunkeraachenEVENTS").css("width"));
@@ -192,30 +186,60 @@ $(document).ready(function(){
 										$("#ConcreteParisCLICK").css('height', bh);
 			  });
 				
+				
+				$(window).scroll(function() {
+    if ($(this).scrollTop()) {
+        $("#toTop").fadeIn();
+    } else {
+        $("#toTop").fadeOut();
+    }
+      if($(window).scrollTop() + $(window).height() < $(document).height() - $("#footer").height()) {
+        $('#toTop').css("position","fixed");    //resetting it
+        $('#toTop').css("bottom","0"); //resetting it
+}
+        if($(window).scrollTop() + $(window).height() > $(document).height() - $("#footer").height()) {
+        $('#toTop').css("position","relative"); // make it related
+        $('#toTop').css("bottom","25px"); // 60 px, height of #toTop
+ }
+    
+    });
+    $("#toTop").click(function() {
+    $("html, body").animate({scrollTop: 0}, 1000);
+    });
+				
+				
+				
+				
+				var l = 0x0;
+				var fc = 0xf;
 
-								$("[title*='koeln']").click(function s(){
-										$("#nachtigallehrenfeld").toggle();
-										$("#nachtigallehrenfeldEVENTS").toggle();										$("#ReinekeFuchsCologne").toggle();
-										$("#ReinekeFuchsCologneEVENTS").toggle();										$("#roxykoeln").toggle();
-										$("#roxykoelnEVENTS").toggle();										$("#odonien").toggle();
-										$("#odonienEVENTS").toggle();										$("#heinzgaul197").toggle();
-										$("#heinzgaul197EVENTS").toggle();										$("#Artheater").toggle();
-										$("#ArtheaterEVENTS").toggle();$("#Gewoelbeklub").toggle();
-										$("#GewoelbeklubEVENTS").toggle();
-
+				$("#but").click(function s(){
+							$("body").css("background-color", "#"+l.toString(16)+l.toString(16)+l.toString(16)+l.toString(16)+l.toString(16)+l.toString(16));
+							$("body").css("color", "#"+fc.toString(16)+fc.toString(16)+fc.toString(16)+fc.toString(16)+fc.toString(16)+fc.toString(16));
+							$(":after").css("color", "#"+fc.toString(16)+fc.toString(16)+fc.toString(16)+fc.toString(16)+fc.toString(16)+fc.toString(16));
+							if ( l == 0 ) { $(this).val('☀');
+																	$(this).css("color","orange");
+																	} 
+							else{$(this).val('👓');
+											//$(this).css("background-color","black");
+											}
+							fc = l;
+							l = Math.abs(l - 0xf);
 			  });
-				$("[title*='maastricht']").click(function s(){
-										$("#thelabmaastricht").toggle();
-										$("#thelabmaastrichtEVENTS").toggle();										$("#muziekgieterij").toggle();
-										$("#muziekgieterijEVENTS").toggle();										$("#claydrummaastricht").toggle();
-										$("#claydrummaastrichtEVENTS").toggle();										$("#complexmaastricht").toggle();
-										$("#complexmaastrichtEVENTS").toggle();
-
-			  });
-
+			
 });
 </script>
+
 <style>
+ html {
+  margin: 4px;
+ }
+ body{
+ margin: 0;
+ height: 100%;
+	background-color: white;
+	#padding-bottom:300px; 
+}
 .bar{
     position:absolute;
     top:0;
@@ -239,10 +263,40 @@ vertical-align: top; /*Makes sure all the divs are correctly aligned.*/
     background :blue;
 }
 .container{
- display: inline-block;		}
+height:100%;
+ display: inline-block;	
+ margin-bottom:20px; 
+ }
+ .but {
+ background-color: white;
+ font-size: 1.5em;
+ font-family: Courier;
+ }
+ h2:after {
+	font: 0.2em;
+	color: black;
+	content: " »"
+ }
+ h2.special:after{
+	font: 0.2em;
+	color: black;
+	content: " «";
+ }
+ .white{
+ color: white !important;
+ }
+ 
+.backtotop_button_wrap {width:100%; background:white; height:auto;}
+.backtotop_button_height {width:100%; height:20px;}
+#toTop {display:none; position: fixed; right:0; bottom:0; width:20px; height:auto; background:beige; float:right;padding:10px; text-align:center; border:1px solid black; line-height:12px;bottom: 20px;}
+#footer {width:100%; height:35px; color:white; text-align:center; background:#313131; border-top:1px solid black;}
+.foot {
+height: 500px;
+#display: block;
+}
 </style>
 <h1>fb-veranstaltungen</h1>
-<button id="but">hihi</button></br>
+<input id="but"type="button" value="&#x1F453;" class="but"></input></br>
 
 </br>
 <div class="container">
@@ -274,27 +328,27 @@ vertical-align: top; /*Makes sure all the divs are correctly aligned.*/
 
 
  <div class="holder">
-	<iframe id="GewoelbeklubEVENTS" src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fpg%2FGewoelbeklub&tabs=events&width=500&height=499&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=false&appId" width="500" height="499" style="border:none;overflow:hidden;" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
+	<iframe class="koeln" id="GewoelbeklubEVENTS" src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fpg%2FGewoelbeklub&tabs=events&width=500&height=499&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=false&appId" width="500" height="499" style="border:none;overflow:hidden;" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
  
  	<div id="GewoelbeklubCLICK" class="bar"></div>
-	<iframe id="Gewoelbeklub" src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FGewoelbeklub%2F&tabs&width=500&height=70&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=false&appId" width="500" height="70" style="border:none;overflow:hidden;" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
+	<iframe class="koeln"  id="Gewoelbeklub" src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FGewoelbeklub%2F&tabs&width=500&height=70&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=false&appId" width="500" height="70" style="border:none;overflow:hidden;" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
  
 </div><!--end of Holder-->
 
 
  <div class="holder">
-	<iframe id="ArtheaterEVENTS" src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fpg%2FArtheater&tabs=events&width=500&height=499&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=false&appId" width="500" height="499" style="border:none;overflow:hidden;" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
+	<iframe class="koeln"  id="ArtheaterEVENTS" src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fpg%2FArtheater&tabs=events&width=500&height=499&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=false&appId" width="500" height="499" style="border:none;overflow:hidden;" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
  
  	<div id="ArtheaterCLICK" class="bar"></div>
-	<iframe id="Artheater" src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FArtheater%2F&tabs&width=500&height=70&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=false&appId" width="500" height="70" style="border:none;overflow:hidden;" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
+	<iframe class="koeln"  id="Artheater" src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FArtheater%2F&tabs&width=500&height=70&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=false&appId" width="500" height="70" style="border:none;overflow:hidden;" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
  
 </div><!--end of Holder-->
 
  <div class="holder">
-	<iframe id="heinzgaul197EVENTS" src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fpg%2Fheinzgaul197&tabs=events&width=500&height=499&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=false&appId" width="500" height="499" style="border:none;overflow:hidden;" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
+	<iframe class="koeln"  id="heinzgaul197EVENTS" src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fpg%2Fheinzgaul197&tabs=events&width=500&height=499&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=false&appId" width="500" height="499" style="border:none;overflow:hidden;" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
  
  	<div id="heinzgaul197CLICK" class="bar"></div>
-	<iframe id="heinzgaul197" src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fheinzgaul197%2F&tabs&width=500&height=70&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=false&appId" width="500" height="70" style="border:none;overflow:hidden;" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
+	<iframe class="koeln"  id="heinzgaul197" src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fheinzgaul197%2F&tabs&width=500&height=70&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=false&appId" width="500" height="70" style="border:none;overflow:hidden;" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
  
 </div><!--end of Holder-->
  
@@ -302,147 +356,122 @@ vertical-align: top; /*Makes sure all the divs are correctly aligned.*/
  
 
 	  <div class="holder">
-	<iframe id="odonienEVENTS" src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fpg%2Fodonien&tabs=events&width=500&height=499&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=false&appId" width="500" height="499" style="border:none;overflow:hidden;" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
+	<iframe class="koeln"  id="odonienEVENTS" src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fpg%2Fodonien&tabs=events&width=500&height=499&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=false&appId" width="500" height="499" style="border:none;overflow:hidden;" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
  
  	<div id="odonienCLICK" class="bar"></div>
-	<iframe id="odonien" src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fodonien%2F&tabs&width=500&height=70&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=false&appId" width="500" height="70" style="border:none;overflow:hidden;" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
+	<iframe class="koeln"  id="odonien" src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fodonien%2F&tabs&width=500&height=70&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=false&appId" width="500" height="70" style="border:none;overflow:hidden;" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
  
 </div><!--end of Holder-->
  
  
  
   <div class="holder">
-	<iframe id="roxykoelnEVENTS" src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fpg%2Froxykoeln&tabs=events&width=500&height=499&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=false&appId" width="500" height="499" style="border:none;overflow:hidden;" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
+	<iframe class="koeln"  id="roxykoelnEVENTS" src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fpg%2Froxykoeln&tabs=events&width=500&height=499&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=false&appId" width="500" height="499" style="border:none;overflow:hidden;" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
  
  	<div id="roxykoelnCLICK" class="bar"></div>
-	<iframe id="roxykoeln" src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Froxykoeln%2F&tabs&width=500&height=70&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=false&appId" width="500" height="70" style="border:none;overflow:hidden;" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
+	<iframe class="koeln"  id="roxykoeln" src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Froxykoeln%2F&tabs&width=500&height=70&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=false&appId" width="500" height="70" style="border:none;overflow:hidden;" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
  
 </div><!--end of Holder-->
 
 
 				 <div class="holder">
-	<iframe id="ReinekeFuchsCologneEVENTS" src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fpg%2FReinekeFuchsCologne&tabs=events&width=500&height=499&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=false&appId" width="500" height="499" style="border:none;overflow:hidden;" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
+	<iframe class="koeln"  id="ReinekeFuchsCologneEVENTS" src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fpg%2FReinekeFuchsCologne&tabs=events&width=500&height=499&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=false&appId" width="500" height="499" style="border:none;overflow:hidden;" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
  
  	<div id="ReinekeFuchsCologneCLICK" class="bar"></div>
-	<iframe id="ReinekeFuchsCologne" src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FReinekeFuchsCologne%2F&tabs&width=500&height=70&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=false&appId" width="500" height="70" style="border:none;overflow:hidden;" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
+	<iframe class="koeln"  id="ReinekeFuchsCologne" src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FReinekeFuchsCologne%2F&tabs&width=500&height=70&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=false&appId" width="500" height="70" style="border:none;overflow:hidden;" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
  
 </div><!--end of Holder-->
 
  <div class="holder">
-	<iframe id="nachtigallehrenfeldEVENTS" src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fpg%2Fnachtigall.ehrenfeld&tabs=events&width=500&height=499&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=false&appId" width="500" height="499" style="border:none;overflow:hidden;" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
+	<iframe class="koeln"  id="nachtigallehrenfeldEVENTS" src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fpg%2Fnachtigall.ehrenfeld&tabs=events&width=500&height=499&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=false&appId" width="500" height="499" style="border:none;overflow:hidden;" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
  
  	<div id="nachtigallehrenfeldCLICK" class="bar"></div>
-	<iframe id="nachtigallehrenfeld" src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fnachtigall.ehrenfeld%2F&tabs&width=500&height=70&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=false&appId" width="500" height="70" style="border:none;overflow:hidden;" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
+	<iframe class="koeln"  id="nachtigallehrenfeld" src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fnachtigall.ehrenfeld%2F&tabs&width=500&height=70&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=false&appId" width="500" height="70" style="border:none;overflow:hidden;" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
  
 </div><!--end of Holder-->
 </div><!--end of Container-->
 
 
-<!--
+
 <div class="container">
 <h2 title="maastricht">Maastricht.</h2>
 
  <div class="holder">
-	<iframe id="muziekgieterijEVENTS" src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fpg%2Fmuziekgieterij&tabs=events&width=500&height=499&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=false&appId" width="500" height="499" style="border:none;overflow:hidden;" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
+	<iframe class="maastricht"  id="muziekgieterijEVENTS" src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fpg%2Fmuziekgieterij&tabs=events&width=500&height=499&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=false&appId" width="500" height="499" style="border:none;overflow:hidden;" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
  
  	<div id="muziekgieterijCLICK" class="bar"></div>
-	<iframe id="muziekgieterij" src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fmuziekgieterij%2F&tabs&width=500&height=70&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=false&appId" width="500" height="70" style="border:none;overflow:hidden;" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
+	<iframe class="maastricht" id="muziekgieterij" src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fmuziekgieterij%2F&tabs&width=500&height=70&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=false&appId" width="500" height="70" style="border:none;overflow:hidden;" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
  
-</div><!--end of Holder- ->
+</div><!--end of Holder-->
 
 
  <div class="holder">
-	<iframe id="claydrummaastrichtEVENTS" src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fpg%2Fclaydrummaastricht&tabs=events&width=500&height=499&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=false&appId" width="500" height="499" style="border:none;overflow:hidden;" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
+	<iframe class="maastricht" id="claydrummaastrichtEVENTS" src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fpg%2Fclaydrummaastricht&tabs=events&width=500&height=499&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=false&appId" width="500" height="499" style="border:none;overflow:hidden;" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
  
  	<div id="claydrummaastrichtCLICK" class="bar"></div>
-	<iframe id="claydrummaastricht" src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fclaydrummaastricht%2F&tabs&width=500&height=70&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=false&appId" width="500" height="70" style="border:none;overflow:hidden;" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
+	<iframe class="maastricht" id="claydrummaastricht" src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fclaydrummaastricht%2F&tabs&width=500&height=70&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=false&appId" width="500" height="70" style="border:none;overflow:hidden;" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
  
-</div><!--end of Holder- ->
+</div><!--end of Holder-->
 
 
  <div class="holder">
-	<iframe id="complexmaastrichtEVENTS" src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fpg%2Fcomplexmaastricht&tabs=events&width=500&height=499&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=false&appId" width="500" height="499" style="border:none;overflow:hidden;" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
+	<iframe class="maastricht" id="complexmaastrichtEVENTS" src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fpg%2Fcomplexmaastricht&tabs=events&width=500&height=499&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=false&appId" width="500" height="499" style="border:none;overflow:hidden;" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
  
  	<div id="complexmaastrichtCLICK" class="bar"></div>
-	<iframe id="complexmaastricht" src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fcomplexmaastricht%2F&tabs&width=500&height=70&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=false&appId" width="500" height="70" style="border:none;overflow:hidden;" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
+	<iframe class="maastricht" id="complexmaastricht" src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fcomplexmaastricht%2F&tabs&width=500&height=70&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=false&appId" width="500" height="70" style="border:none;overflow:hidden;" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
  
-</div><!--end of Holder- ->
+</div><!--end of Holder-->
 
  <div class="holder">
-	<iframe id="thelabmaastrichtEVENTS" src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fpg%2Fthelabmaastricht&tabs=events&width=500&height=499&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=false&appId" width="500" height="499" style="border:none;overflow:hidden;" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
+	<iframe class="maastricht" id="thelabmaastrichtEVENTS" src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fpg%2Fthelabmaastricht&tabs=events&width=500&height=499&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=false&appId" width="500" height="499" style="border:none;overflow:hidden;" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
  
  	<div id="thelabmaastrichtCLICK" class="bar"></div>
-	<iframe id="thelabmaastricht" src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fthelabmaastricht%2F&tabs&width=500&height=70&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=false&appId" width="500" height="70" style="border:none;overflow:hidden;" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
+	<iframe class="maastricht" id="thelabmaastricht" src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fthelabmaastricht%2F&tabs&width=500&height=70&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=false&appId" width="500" height="70" style="border:none;overflow:hidden;" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
  
-</div><!--end of Holder- ->
-</div><!--end of Container- ->
+</div><!--end of Holder-->
+</div><!--end of Container-->
 
 <div class="container">
-<h2>Brüssel.</h2>
+<h2 title="bruessel">Brüssel.</h2>
  <div class="holder">
-	<iframe id="bonnefooiEVENTS" src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fpg%2Fbonnefooi&tabs=events&width=500&height=499&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=false&appId" width="500" height="499" style="border:none;overflow:hidden;" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
+	<iframe class="bruessel" id="bonnefooiEVENTS" src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fpg%2Fbonnefooi&tabs=events&width=500&height=499&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=false&appId" width="500" height="499" style="border:none;overflow:hidden;" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
  
  	<div id="bonnefooiCLICK" class="bar"></div>
-	<iframe id="bonnefooi" src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fbonnefooi%2F&tabs&width=500&height=70&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=false&appId" width="500" height="70" style="border:none;overflow:hidden;" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
+	<iframe class="bruessel" id="bonnefooi" src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fbonnefooi%2F&tabs&width=500&height=70&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=false&appId" width="500" height="70" style="border:none;overflow:hidden;" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
  
-</div><!--end of Holder- ->
+</div><!--end of Holder-->
 
  <div class="holder">
-	<iframe id="fusebrusselsEVENTS" src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fpg%2Ffusebrussels&tabs=events&width=500&height=499&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=false&appId" width="500" height="499" style="border:none;overflow:hidden;" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
+	<iframe class="bruessel" id="fusebrusselsEVENTS" src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fpg%2Ffusebrussels&tabs=events&width=500&height=499&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=false&appId" width="500" height="499" style="border:none;overflow:hidden;" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
  
  	<div id="fusebrusselsCLICK" class="bar"></div>
-	<iframe id="fusebrussels" src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Ffusebrussels%2F&tabs&width=500&height=70&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=false&appId" width="500" height="70" style="border:none;overflow:hidden;" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
+	<iframe class="bruessel" id="fusebrussels" src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Ffusebrussels%2F&tabs&width=500&height=70&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=false&appId" width="500" height="70" style="border:none;overflow:hidden;" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
  
-</div><!--end of Holder- ->
+</div><!--end of Holder-->
 
 
 
-</div><!--end of Container- ->
+</div><!--end of Container-->
  <div class="container">
-<h2>Paris.</h2>
- <div class="holder">
-	<iframe id="ConcreteParisEVENTS" src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fpg%2FConcreteParis&tabs=events&width=500&height=499&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=false&appId" width="500" height="499" style="border:none;overflow:hidden;" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
+<h2 title="paris">Paris.</h2>
+ <div class="holder foot">
+	<iframe class="paris" id="ConcreteParisEVENTS" src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fpg%2FConcreteParis&tabs=events&width=500&height=499&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=false&appId" width="500" height="499" style="border:none;overflow:hidden;" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
  
  	<div id="ConcreteParisCLICK" class="bar"></div>
-	<iframe id="ConcreteParis" src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FConcreteParis%2F&tabs&width=500&height=70&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=false&appId" width="500" height="70" style="border:none;overflow:hidden;" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
- 
-</div><!--end of Holder- ->
+	<iframe class="paris" id="ConcreteParis" src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FConcreteParis%2F&tabs&width=500&height=70&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=false&appId" width="500" height="70" style="border:none;overflow:hidden;" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
 
+</div><!--end of Holder-->
+</div><!--end of Container--> 
 
-</div><!--end of Container- -> 
-	
-
-<div class="fb-page" data-href="https://www.facebook.com/pg/bonnefooi" data-tabs="events" data-width="500" data-small-header="false" data-adapt-container-width="false" data-hide-cover="true" data-show-facepile="false"><blockquote cite="https://www.facebook.com/pg/bonnefooi" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/pg/bonnefooi">bonnefooi</a></blockquote></div>
-<iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fpg%2Fbonnefooi&tabs=events&width=500&height=499&small_header=false&adapt_container_width=false&hide_cover=true&show_facepile=false&appId" width="500" height="499" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
-
- <a target="_blank" href="https://www.facebook.com/pg/bonnefooi/events/?ref=page_internal">https://www.facebook.com/pg/bonnefooi/events/?ref=page_internal</a>
- 
- 
- 
-	<div class="fb-page" data-href="https://www.facebook.com/pg/fusebrussels" data-tabs="events" data-width="500" data-small-header="false" data-adapt-container-width="false" data-hide-cover="true" data-show-facepile="false"><blockquote cite="https://www.facebook.com/pg/fusebrussels" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/pg/fusebrussels">fusebrussels</a></blockquote></div>
-<iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fpg%2Ffusebrussels&tabs=events&width=500&height=499&small_header=false&adapt_container_width=false&hide_cover=true&show_facepile=false&appId" width="500" height="499" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
-
- <a target="_blank" href="https://www.facebook.com/pg/fusebrussels/events/?ref=page_internal">https://www.facebook.com/pg/fusebrussels/events/?ref=page_internal</a> 
-	 
-	 
-	 
- <h2>Paris.</h2>
-	 <div class="fb-page" data-href="https://www.facebook.com/pg/ConcreteParis" data-tabs="events" data-width="500" data-small-header="false" data-adapt-container-width="false" data-hide-cover="true" data-show-facepile="false"><blockquote cite="https://www.facebook.com/pg/ConcreteParis" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/pg/ConcreteParis">ConcreteParis</a></blockquote></div>
-<iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fpg%2FConcreteParis&tabs=events&width=500&height=499&small_header=false&adapt_container_width=false&hide_cover=true&show_facepile=false&appId" width="500" height="499" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
-
- <a target="_blank" href="https://www.facebook.com/pg/ConcreteParis/events/?ref=page_internal">https://www.facebook.com/pg/ConcreteParis/events/?ref=page_internal</a>
- 
- 
- 
- 
- 
- 
-
-	  <a target="_blank" href="hhhh">uuuuu</a> </br>
-
-		 <a target="_blank" href="hhhh">uuuuu</a> </br>
-
-		  <a target="_blank" href="hhhh">uuuuu</a> </br>
-
+<div class="backtotop_button_wrap">
+    <div class="backtotop_button_height">
+    
+    </div>
+    </div>
+    <div id="footer">
+            亖
+        <div id="toTop" style="color: black">&#8613;</div>
+     </div>
 </body>
+
 </html>
