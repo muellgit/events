@@ -1,0 +1,135 @@
+ html {
+  margin: 4px;
+ }
+ body{
+ margin: 0;
+ height: 100%;
+	background-color: white;
+	#padding-bottom:300px;
+}
+.bar{
+    position:absolute;
+    top:0;
+ #  left:0;
+    width:100%;
+   height:100%;
+
+		opacity: 0.2;}
+.bar:hover{
+    background: red;
+		}
+.holder{
+    vertical-align: top; /*Makes sure all the divs are correctly aligned.*/
+    white-space: normal; /*Prevents child elements from inheriting nowrap.*/
+    float: left;
+    position:relative;
+}
+.holderCITY{
+    display: block;
+    vertical-align: top; /*Makes sure all the divs are correctly aligned.*/
+    white-space: normal; /*Prevents child elements from inheriting nowrap.*/
+    position:relative;
+}
+.frame{
+    width: 100%;
+    height:100%;
+    background :blue;
+}
+.container{
+height:100%;
+ display: inline-block;
+ margin-bottom:20px;
+      margin-left: auto;
+    margin-right: auto;
+ }
+ .but {
+ background-color: white;
+ font-size: 1.5em;
+ font-family: Courier;
+ margin-bottom: 1em;
+ }
+
+.but:clicked {
+
+}
+
+
+.backtotop_button_wrap {width:100%;  height:auto;}
+.backtotop_button_height {width:100%; height:35px;}
+#toTop {display:none; position: fixed; right:0; bottom:0; width:20px; height:20px; background:beige; float:right !important;padding:2px; text-align:center; border:1px solid black; line-height:12px;bottom: 45px;}
+#footer {width:100%; height:35px; color:white; text-align:center; background:#313131; border-top:1px solid black;}
+.foot {
+height: 500px;
+#display: block;
+}
+
+.city{
+    float: none;
+    overflow: hidden;
+}
+.ra {
+    display: block;
+    height: 28px;
+    width: 56px;
+    background-repeat: no-repeat;
+    background-position: center center;
+	background-size: 60% 60%;
+    -webkit-transition: all .5s ease;
+    -moz-transition: all .5s ease;
+    -ms-transition: all .5s ease;
+    -o-transition: all .5s ease;
+    transition: all .5s ease;
+    padding: 0;
+    margin: 0;
+}
+ h2{
+ background-color: red;
+   float: left;
+ }
+ h2:after {
+	font: 0.2em;
+	color: black;
+	content: " »"
+ }
+ h2.special:after{
+	font: 0.2em;
+	color: black;
+	content: " «";
+ }
+ a.ralogo-ffffff {
+    background-color: white;
+    background-image: url('ra-logo-ffffff.png');
+}
+ a.ralogo-000000 {
+    background-color: black;
+    background-image: url('ra-logo-000000.png');
+}
+
+ a.ra:hover {
+  -webkit-transform: scale(1.2);
+  -moz-transform: scale(1.2);
+  -o-transform: scale(1.2);
+  -ms-transform: scale(1.2); /* IE 9 */
+  transform: scale(1.2);
+
+}
+
+.pull-left {
+		margin: 0;
+		padding: 0;
+    float: left !important;
+}
+.pull-right {
+		margin: 0;
+		padding: 0;
+    float: right !important;
+}
+.footer-menu {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+.footer-menu li {
+    display: inline;
+    padding-left: 10px;
+}
