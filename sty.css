@@ -1,23 +1,27 @@
- html {
+html {
   margin: 4px;
  }
- body{
+body{
  margin: 0;
  height: 100%;
-	background-color: white;
-	#padding-bottom:300px;
+ background-color: white;
 }
 .bar{
-    position:absolute;
-    top:0;
- #  left:0;
-    width:100%;
-   height:100%;
-
-		opacity: 0.2;}
+position:absolute;
+top:0;
+opacity: 0.8;
+width: 10%;
+height: 50px;
+right: 0;
+display: inline-block;
+top: 25px;
+transform: translate(-50%,-50%);
+    background-image: url(open.png);
+    background-size: cover;
+}
 .bar:hover{
-    background: red;
-		}
+    background: pink;
+}
 .holder{
     vertical-align: top; /*Makes sure all the divs are correctly aligned.*/
     white-space: normal; /*Prevents child elements from inheriting nowrap.*/
@@ -66,6 +70,9 @@ height: 500px;
 .city{
     float: none;
     overflow: hidden;
+    border-bottom: 2px solid;
+    margin-bottom: 1em;
+    margin-top: 1.5em;
 }
 .ra {
     display: block;
@@ -83,8 +90,7 @@ height: 500px;
     margin: 0;
 }
  h2{
- background-color: red;
-   float: left;
+    float: left;
  }
  h2:after {
 	font: 0.2em;
