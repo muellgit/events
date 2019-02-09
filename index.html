@@ -18,12 +18,6 @@
 $(window).on("load", function() {
 	//	alert("hihi");
 	//	alert($("iframe[class*='aachen'][id*='EVENTS']").css('display'));
-			$("iframe[id*='EVENTS']").each(function(i, obj){
-					 if($(this).contents().find("body").length <= 0) {
-							// some html page loaded in iframe
-							$(this).attr('src','error.png');
-					}
-		});
 });
 
 
