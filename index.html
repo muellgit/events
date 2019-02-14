@@ -19,6 +19,7 @@
 $(window).on("load", function() {
 	//	alert("hihi");
 	//	alert($("iframe[class*='aachen'][id*='EVENTS']").css('display'));
+    $(".holder").addClass('holder-background');
 });
 
 
@@ -89,6 +90,47 @@ $(document).ready(function(){
                                 $("#hoeuropa").toggle();
                                 $("#hoeuropaEVENTS").toggle();
       });
+                        $("#fraichevaalsEVENTS").hide();
+     $("#fraichevaalsCLICK").click(function s(){
+                                $("#fraichevaals").toggle();
+                                $("#fraichevaalsEVENTS").toggle();
+      });
+                            $("#kingzcornerEVENTS").hide();
+     $("#kingzcornerCLICK").click(function s(){
+                                $("#kingzcorner").toggle();
+                                $("#kingzcornerEVENTS").toggle();
+      });
+                            $("#azaachenbleibtEVENTS").hide();
+     $("#azaachenbleibtCLICK").click(function s(){
+                                $("#azaachenbleibt").toggle();
+                                $("#azaachenbleibtEVENTS").toggle();
+      });
+                              $("#NoxAachenEVENTS").hide();
+     $("#NoxAachenCLICK").click(function s(){
+                                $("#NoxAachen").toggle();
+                                $("#NoxAachenEVENTS").toggle();
+      });
+                            $("#ApolloAachenEVENTS").hide();
+     $("#ApolloAachenCLICK").click(function s(){
+                                $("#ApolloAachen").toggle();
+                                $("#ApolloAachenEVENTS").toggle();
+      });
+                              $("#nightlifeaachenEVENTS").hide();
+     $("#nightlifeaachenCLICK").click(function s(){
+                                $("#nightlifeaachen").toggle();
+                                $("#nightlifeaachenEVENTS").toggle();
+      });
+                              $("#starfishaachenEVENTS").hide();
+     $("#starfishaachenCLICK").click(function s(){
+                                $("#starfishaachen").toggle();
+                                $("#starfishaachenEVENTS").toggle();
+      });
+                            $("#kaixersEVENTS").hide();
+     $("#kaixersCLICK").click(function s(){
+                                $("#kaixers").toggle();
+                                $("#kaixersEVENTS").toggle();
+      });
+      
 
                         $("#GewoelbeklubEVENTS").hide();
      $("#GewoelbeklubCLICK").click(function s(){
@@ -125,6 +167,11 @@ $(document).ready(function(){
      $("#nachtigallehrenfeldCLICK").click(function s(){
                                 $("#nachtigallehrenfeld").toggle();
                                 $("#nachtigallehrenfeldEVENTS").toggle();
+      });
+                            $("#RedCatKoelnEVENTS").hide();
+     $("#RedCatKoelnCLICK").click(function s(){
+                                $("#RedCatKoeln").toggle();
+                                $("#RedCatKoelnEVENTS").toggle();
       });
                         $("#thelabmaastrichtEVENTS").hide();
      $("#thelabmaastrichtCLICK").click(function s(){
@@ -180,7 +227,7 @@ $(document).ready(function(){
         }
         if($(window).scrollTop() + $(window).height() > $(document).height() - $("#footer").height()) {
             //$('#toTop').css("position","relative"); // make it related
-            $('#toTop').css("bottom","38px"); // 60 px, height of #toTop
+            $('#toTop').css("bottom","8px"); // 60 px, height of #toTop
         }
     });
     $("#toTop").click(function() {
@@ -244,30 +291,93 @@ $(document).ready(function(){
 <input id="but"type="button" value="&#x1F453;" class="but"></input>
 </br>
 <div class="container">
-<div class="city">
-  <h2 class="pull-left" title="aachen">Aachen.</h2>
-  <a target="_blank" id="/de/cologne" class="ra ralogo-ffffff pull-right" ></a>
- </div>
 <div class="holderCITY">
-        
-
-<div class="holder">
-        <div id="musikbunkeraachenCLICK" class="bar"  ></div>      
-		<iframe class="aachen" id="musikbunkeraachen" src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fmusikbunkeraachen%2F&tabs&width=500&height=70&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=false&appId" width="500" height="70" style="border:none;overflow:hidden;" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
-                
-		<iframe class="aachen" id="musikbunkeraachenEVENTS" src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fpg%2Fmusikbunkeraachen&tabs=events&width=500&height=499&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=false&appId" width="500" height="499" style="border:none;overflow:hidden;" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
-    
-        
+    <div class="city">
+      <h2 class="pull-left" title="aachen">Aachen.</h2>
+      <a target="_blank" id="/de/cologne" class="ra ralogo-ffffff pull-right" ></a>
+    </div>
+    <!--musikbunker-->
          
- </div><!--end of Holder-->
+    <div class="holder">
+            <iframe class="aachen" id="musikbunkeraachen" src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fmusikbunkeraachen%2F&tabs&width=500&height=70&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=false&appId" width="500" height="70" style="border:none;overflow:hidden;" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
+
+            <div id="musikbunkeraachenCLICK" class="bar"  ></div> 
+ 
+            <iframe class="aachen" id="musikbunkeraachenEVENTS" src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fpg%2Fmusikbunkeraachen&tabs=events&width=500&height=499&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=false&appId" width="500" height="499" style="border:none;overflow:hidden;" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>     
+    </div>
+
+<!--hotel europa-->
  <div class="holder">
 	<iframe class="aachen" id="hoeuropaEVENTS" src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fpg%2Fho.europa&tabs=events&width=500&height=499&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=false&appId" width="500" height="499" style="border:none;overflow:hidden;" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
  
  	<div id="hoeuropaCLICK" class="bar" ></div>
 	<iframe class="aachen" id="hoeuropa" src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fho.europa%2F&tabs&width=500&height=70&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=false&appId" width="500" height="70" style="border:none;overflow:hidden;" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
-</div><!--end of Holder-->
-</div><!--end of Container-->
 </div>
+    
+    
+<!--fraiche vaals-->
+ <div class="holder">
+	<iframe class="aachen" id="fraichevaalsEVENTS" src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fpg%2Ffraichevaals&tabs=events&width=500&height=499&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=false&appId" width="500" height="499" style="border:none;overflow:hidden;" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
+ 
+ 	<div id="fraichevaalsCLICK" class="bar" ></div>
+	<iframe class="aachen" id="fraichevaals" src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Ffraichevaals%2F&tabs&width=500&height=70&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=false&appId" width="500" height="70" style="border:none;overflow:hidden;" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
+</div>
+    
+<!--KingsCorner-->        
+<div class="holder">
+	<iframe class="aachen"  id="kingzcornerEVENTS" src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fpg%2Fkingzcorner&tabs=events&width=500&height=499&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=false&appId" width="500" height="499" style="border:none;overflow:hidden;" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
+ 
+ 	<div id="kingzcornerCLICK" class="bar"></div>
+	<iframe class="aachen"  id="kingzcorner" src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fkingzcorner%2F&tabs&width=500&height=70&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=false&appId" width="500" height="70" style="border:none;overflow:hidden;" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
+</div>    
+<!--AZ AACHEN-->        
+<div class="holder">
+	<iframe class="aachen"  id="azaachenbleibtEVENTS" src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fpg%2Fazaachenbleibt&tabs=events&width=500&height=499&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=false&appId" width="500" height="499" style="border:none;overflow:hidden;" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
+ 
+ 	<div id="azaachenbleibtCLICK" class="bar"></div>
+	<iframe class="aachen"  id="azaachenbleibt" src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fazaachenbleibt%2F&tabs&width=500&height=70&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=false&appId" width="500" height="70" style="border:none;overflow:hidden;" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
+</div>
+<!--Apollo Aachen-->    
+<div class="holder">
+	<iframe class="aachen"  id="ApolloAachenEVENTS" src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fpg%2FApolloAachen&tabs=events&width=500&height=499&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=false&appId" width="500" height="499" style="border:none;overflow:hidden;" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
+ 
+ 	<div id="ApolloAachenCLICK" class="bar"></div>
+	<iframe class="aachen"  id="ApolloAachen" src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FApolloAachen%2F&tabs&width=500&height=70&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=false&appId" width="500" height="70" style="border:none;overflow:hidden;" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
+</div>
+<!--NOX Aachen-->    
+<div class="holder">
+	<iframe class="aachen"  id="NoxAachenEVENTS" src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fpg%2FNoxAachen&tabs=events&width=500&height=499&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=false&appId" width="500" height="499" style="border:none;overflow:hidden;" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
+ 
+ 	<div id="NoxAachenCLICK" class="bar"></div>
+	<iframe class="aachen"  id="NoxAachen" src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FNoxAachen%2F&tabs&width=500&height=70&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=false&appId" width="500" height="70" style="border:none;overflow:hidden;" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
+</div>
+
+<!--Nightlife Aachen-->
+<div class="holder">
+	<iframe class="aachen"  id="nightlifeaachenEVENTS" src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fpg%2Fnightlif.eaachen&tabs=events&width=500&height=499&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=false&appId" width="500" height="499" style="border:none;overflow:hidden;" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
+ 
+ 	<div id="nightlifeaachenCLICK" class="bar"></div>
+	<iframe class="aachen"  id="nightlifeaachen" src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fnightlife.aachen%2F&tabs&width=500&height=70&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=false&appId" width="500" height="70" style="border:none;overflow:hidden;" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
+</div>
+    
+<!--Starfish-->
+<div class="holder">
+	<iframe class="aachen"  id="starfishaachenEVENTS" src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fpg%2Fstarfishaachen&tabs=events&width=500&height=499&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=false&appId" width="500" height="499" style="border:none;overflow:hidden;" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
+ 
+ 	<div id="starfishaachenCLICK" class="bar"></div>
+	<iframe class="aachen"  id="starfishaachen" src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fstarfishaachen%2F&tabs&width=500&height=70&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=false&appId" width="500" height="70" style="border:none;overflow:hidden;" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
+</div>
+    
+<!--Kaixers-->
+<div class="holder">
+	<iframe class="aachen"  id="kaixersEVENTS" src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fpg%2Fkaixers&tabs=events&width=500&height=499&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=false&appId" width="500" height="499" style="border:none;overflow:hidden;" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
+ 
+ 	<div id="kaixersCLICK" class="bar"></div>
+	<iframe class="aachen"  id="kaixers" src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fkaixers%2F&tabs&width=500&height=70&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=false&appId" width="500" height="70" style="border:none;overflow:hidden;" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
+</div><!--end of Holder-->
+    
+</div><!--end of city-->
+</div><!--end of Container-->
 
 
 
@@ -278,7 +388,7 @@ $(document).ready(function(){
   <a target="_blank" id="/de/cologne" class="ra ralogo-ffffff pull-right" ></a>
  </div>
 
-<div class="holderCITY">
+
  <div class="holder">
 	<iframe class="koeln" id="GewoelbeklubEVENTS" src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fpg%2FGewoelbeklub&tabs=events&width=500&height=499&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=false&appId" width="500" height="499" style="border:none;overflow:hidden;" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
  
@@ -333,6 +443,13 @@ $(document).ready(function(){
  	<div id="nachtigallehrenfeldCLICK" class="bar"></div>
 	<iframe class="koeln"  id="nachtigallehrenfeld" src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fnachtigall.ehrenfeld%2F&tabs&width=500&height=70&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=false&appId" width="500" height="70" style="border:none;overflow:hidden;" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
 </div><!--end of Holder-->
+    
+<div class="holder">
+	<iframe class="koeln"  id="RedCatKoelnEVENTS" src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fpg%2FRedCatKoeln&tabs=events&width=500&height=499&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=false&appId" width="500" height="499" style="border:none;overflow:hidden;" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
+ 
+ 	<div id="RedCatKoelnCLICK" class="bar"></div>
+	<iframe class="koeln"  id="RedCatKoeln" src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FRedCatKoeln%2F&tabs&width=500&height=70&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=false&appId" width="500" height="70" style="border:none;overflow:hidden;" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
+</div><!--end of Holder-->        
 </div><!--end of Container-->
 </div>
 
@@ -409,7 +526,7 @@ $(document).ready(function(){
   <a target="_blank" id="/fr/paris" class="ra ralogo-ffffff pull-right" ></a>
  </div>
 
- <div class="holder foot">
+ <div class="holder">
 	<iframe class="paris" id="ConcreteParisEVENTS" src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fpg%2FConcreteParis&tabs=events&width=500&height=499&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=false&appId" width="500" height="499" style="border:none;overflow:hidden;" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
  
  	<div id="ConcreteParisCLICK" class="bar"></div>
