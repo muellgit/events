@@ -129,6 +129,8 @@ $(document).ready(function(){
     //change colors and icons
     $("a.ra").removeClass("ralogo-"+invert); $("a.ra").addClass("ralogo-"+paint);
     $("body").css("background-color", "#"+paint);
+    $("a.ohell").toggleClass('ohellcolor');
+    $("span.oh").toggleClass('ohcolor');
     $("body").css("color", "#"+invert);
     $(":after").css("color", "#"+invert);
     var styleElem = document.head.appendChild(document.createElement("style"));
@@ -261,7 +263,8 @@ $(document).ready(function(){
 <div class="container">
 <div class="city">
   <h2 class="pull-left" title="koeln">Köln.</h2>
-  <a target="_blank" id="/de/cologne" class="ra ralogo-ffffff pull-right" ></a>
+    <a target="_blank" id="/de/cologne" class="ra ralogo-ffffff pull-right" ></a>
+    <a target="_blank" id="cologne" class="ohell" href="https://koeln.ohschonhell.de/" ><span class="oh">OH</span> SCHON HELL</a>
  </div>
 
  <div class="holderCITY koelnCITY">
@@ -453,7 +456,7 @@ $(document).ready(function(){
           
 						<ul class="footer-menu pull-right">
             <li><a href="https://muellgit.github.io/ueber-uns"></a></li>
-            <li><a href="https://muellgit.github.io/impressum">Kontakt</a></li>
+            <li><a href="mailto:anmeldn@yandex.com?Subject=jojo%20soup">Kontakt</a></li>
             <li><a href="https://muellgit.github.io/mpressum">Impressum</a></li>
             <li><a href="https://muellgit.github.io/datenschutz">Datenschutz</a></li>
             <li><a href="https://muellgit.github.io/agb">AGB</a></li>
