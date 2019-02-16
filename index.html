@@ -25,7 +25,13 @@ $(window).on("load", function() {
 });
 
 
-jQuery.fn.visible = function() {
+$(document).ready(function(){
+    /*
+    //Toggle all clubs of a city button
+    //
+    */
+    /*
+    jQuery.fn.visible = function() {
     return this.css('visibility', 'visible');
 };
 
@@ -39,13 +45,6 @@ jQuery.fn.toggleVisibility = function() {
     });
 };
 
-		
-$(document).ready(function(){
-    /*
-    //Toggle all clubs of a city button
-    //
-    */
-    /*
     $("div[class*='aufzu']").click(function s(){
         var c = $( this ).attr( "title" );
         var action = "hide";
@@ -85,7 +84,7 @@ $(document).ready(function(){
           var club = $(this).attr('id').slice(0,-5);
           $("#"+club).toggle();
           $("#"+club+"EVENTS").toggle();
-          if ( )
+          $("iframe[id*='EVENTS'").toggleClass('noevent-background');
         });
     });
 

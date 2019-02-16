@@ -36,6 +36,13 @@ transform: translate(-50%,-50%);
     background-size: contain;
     background-position: top;
 }
+.noevent-background{
+    background-image: url(error.png);
+    background-size: contain;
+    background-position: top;
+    background-repeat: no-repeat;
+
+}
 .holder{
     vertical-align: top; /*Makes sure all the divs are correctly aligned.*/
     white-space: normal; /*Prevents child elements from inheriting nowrap.*/
@@ -43,6 +50,7 @@ transform: translate(-50%,-50%);
     position:relative;
     min-width:  180px;
     max-width: 500px;
+
 }
 .holderCITY{
     display: grid;
