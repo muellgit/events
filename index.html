@@ -19,7 +19,9 @@
 $(window).on("load", function() {
 	//	alert("hihi");
 	//	alert($("iframe[class*='aachen'][id*='EVENTS']").css('display'));
+    $("div[class*='holderCITY'").hide();
     $(".holder iframe:not([id*='EVENTS'])").addClass('holder-background');
+
 });
 
 
@@ -39,11 +41,12 @@ jQuery.fn.toggleVisibility = function() {
 
 		
 $(document).ready(function(){
-	/*
-    //City Swtich button
+    /*
+    //Toggle all clubs of a city button
     //
     */
-    $("h2").click(function s(){
+    /*
+    $("div[class*='aufzu']").click(function s(){
         var c = $( this ).attr( "title" );
         var action = "hide";
         $("iframe[class*="+c+"][id*='EVENTS']").each(function(i, obj){
@@ -63,17 +66,16 @@ $(document).ready(function(){
             $(this).toggleClass("special");
         }
     });
-	/*
-    //Init boxes
+    /*
+    //Toggle a whole city button
     //
+    */
+    $("h2").click(function s(){
+        var c = $( this ).attr( "title" ) + "CITY";
+        $("div[class*="+c+"]").fadeToggle();
+        $(this).toggleClass("special");
+    });
 
-    var bh = 0;
-    var bw = 0;
-    $(".holder").css('width', $("#musikbunkeraachenEVENTS").css("width"));
-    bw = $("#musikbunkeraachenEVENTS").css("width");
-    bh = $("#musikbunkeraachen").css('height');
-    $(".bar").css('height', bh+" !important");
-*/
 	/*
     //boxes with fb-events
     /*/
@@ -171,7 +173,7 @@ $(document).ready(function(){
       <a target="_blank" id="/de/cologne" class="ra ralogo-ffffff pull-right" ></a>
     </div>
     <!--musikbunker-->
-    <div class="holderCITY">
+    <div class="holderCITY aachenCITY">
     <div class="holder">
             <iframe class="aachen" id="musikbunkeraachen" src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fmusikbunkeraachen%2F&tabs&width=500&height=70&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=false&appId" width="500" height="70" style="border:none;overflow:hidden;" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
 
@@ -262,7 +264,7 @@ $(document).ready(function(){
   <a target="_blank" id="/de/cologne" class="ra ralogo-ffffff pull-right" ></a>
  </div>
 
-
+ <div class="holderCITY koelnCITY">
  <div class="holder">
 	<iframe class="koeln" id="GewoelbeklubEVENTS" src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fpg%2FGewoelbeklub&tabs=events&width=500&height=499&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=false&appId" width="500" height="499" style="border:none;overflow:hidden;" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
  
@@ -288,7 +290,7 @@ $(document).ready(function(){
  
 </div><!--end of Holder-->
 
-	  <div class="holder">
+<div class="holder">
 	<iframe class="koeln"  id="odonienEVENTS" src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fpg%2Fodonien&tabs=events&width=500&height=499&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=false&appId" width="500" height="499" style="border:none;overflow:hidden;" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
  
  	<div id="odonienCLICK" class="bar"></div>
@@ -303,7 +305,7 @@ $(document).ready(function(){
  
 </div><!--end of Holder-->
 
-				 <div class="holder">
+ <div class="holder">
 	<iframe class="koeln"  id="ReinekeFuchsCologneEVENTS" src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fpg%2FReinekeFuchsCologne&tabs=events&width=500&height=499&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=false&appId" width="500" height="499" style="border:none;overflow:hidden;" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
  
  	<div id="ReinekeFuchsCologneCLICK" class="bar"></div>
@@ -328,12 +330,18 @@ $(document).ready(function(){
 </div>
 
 
+
+
+
+
+
+
 <div class="container">
 <div class="city">
   <h2 class="pull-left" title="maastricht">Maastricht.</h2>
   <a target="_blank" id="/nl/otherregions" class="ra ralogo-ffffff pull-right" ></a>
  </div>
-
+<div class="holderCITY maastrichtCITY">
 
  <div class="holder">
 	<iframe class="maastricht"  id="muziekgieterijEVENTS" src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fpg%2Fmuziekgieterij&tabs=events&width=500&height=499&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=false&appId" width="500" height="499" style="border:none;overflow:hidden;" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
@@ -369,6 +377,7 @@ $(document).ready(function(){
  
 </div><!--end of Holder-->
 </div><!--end of Container-->
+</div>
 
 <div class="container">
 <div class="city">
@@ -376,7 +385,7 @@ $(document).ready(function(){
   <a target="_blank" id="/be/brussels" class="ra ralogo-ffffff pull-right" ></a>
  </div>
 
-
+<div class="holderCITY bruesselCITY">
  <div class="holder">
 	<iframe class="bruessel" id="bonnefooiEVENTS" src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fpg%2Fbonnefooi&tabs=events&width=500&height=499&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=false&appId" width="500" height="499" style="border:none;overflow:hidden;" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
  
@@ -393,13 +402,14 @@ $(document).ready(function(){
  
 </div><!--end of Holder-->
 </div><!--end of Container-->
-</br>
+</div>
+
  <div class="container">
 <div class="city">
   <h2 class="pull-left" title="paris">Paris.</h2>
   <a target="_blank" id="/fr/paris" class="ra ralogo-ffffff pull-right" ></a>
  </div>
-
+<div class="holderCITY aachenCITY">
  <div class="holder">
 	<iframe class="paris" id="ConcreteParisEVENTS" src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fpg%2FConcreteParis&tabs=events&width=500&height=499&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=false&appId" width="500" height="499" style="border:none;overflow:hidden;" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
  
@@ -408,33 +418,31 @@ $(document).ready(function(){
 
 </div><!--end of Holder-->
 </div><!--end of Container--> 
+</div>
 
 <div class="container">
 <div class="city">
-  <h2 class="pull-left" title="paris">Würzburg.</h2>
+  <h2 class="pull-left" title="wue">Würzburg.</h2>
   <a target="_blank" id="/de/bavaria" class="ra ralogo-ffffff pull-right" ></a>
  </div>
-
+<div class="holderCITY wueCITY">
  <div class="holder">
-	<iframe class="paris" id="mszufriedenheitEVENTS" src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fpg%2Fmszufriedenheit&tabs=events&width=500&height=499&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=false&appId" width="500" height="499" style="border:none;overflow:hidden;" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
+	<iframe class="wue" id="mszufriedenheitEVENTS" src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fpg%2Fmszufriedenheit&tabs=events&width=500&height=499&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=false&appId" width="500" height="499" style="border:none;overflow:hidden;" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
 
  	<div id="mszufriedenheitCLICK" class="bar"></div>
-	<iframe class="paris" id="mszufriedenheit" src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fmszufriedenheit%2F&tabs&width=500&height=70&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=false&appId" width="500" height="70" style="border:none;overflow:hidden;" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
+	<iframe class="wue" id="mszufriedenheit" src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fmszufriedenheit%2F&tabs&width=500&height=70&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=false&appId" width="500" height="70" style="border:none;overflow:hidden;" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
 
 </div><!--end of Holder-->
 
  <div class="holder">
-	<iframe class="paris" id="waldschenkedornheimEVENTS" src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fpg%2Fwaldschenkedornheim&tabs=events&width=500&height=499&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=false&appId" width="500" height="499" style="border:none;overflow:hidden;" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
+	<iframe class="wue" id="waldschenkedornheimEVENTS" src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fpg%2Fwaldschenkedornheim&tabs=events&width=500&height=499&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=false&appId" width="500" height="499" style="border:none;overflow:hidden;" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
 
  	<div id="waldschenkedornheimCLICK" class="bar"></div>
-	<iframe class="paris" id="waldschenkedornheim" src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fwaldschenkedornheim%2F&tabs&width=500&height=70&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=false&appId" width="500" height="70" style="border:none;overflow:hidden;" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
+	<iframe class="wue" id="waldschenkedornheim" src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fwaldschenkedornheim%2F&tabs&width=500&height=70&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=false&appId" width="500" height="70" style="border:none;overflow:hidden;" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
 
 </div><!--end of Holder-->
-
-
-
 </div><!--end of Container-->
-
+</div>
 <div class="backtotop_button_wrap">
     <div class="backtotop_button_height">
    </div>
