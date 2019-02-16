@@ -19,7 +19,7 @@
 $(window).on("load", function() {
 	//	alert("hihi");
 	//	alert($("iframe[class*='aachen'][id*='EVENTS']").css('display'));
-    $(".holder").addClass('holder-background');
+    $(".holder iframe:not([id*='EVENTS'])").addClass('holder-background');
 });
 
 
@@ -66,160 +66,26 @@ $(document).ready(function(){
 	/*
     //Init boxes
     //
-    */
+
     var bh = 0;
     var bw = 0;
     $(".holder").css('width', $("#musikbunkeraachenEVENTS").css("width"));
     bw = $("#musikbunkeraachenEVENTS").css("width");
     bh = $("#musikbunkeraachen").css('height');
     $(".bar").css('height', bh+" !important");
-
-
-
+*/
 	/*
     //boxes with fb-events
-    //
-    */
-                        $("#musikbunkeraachenEVENTS").hide();
-     $("#musikbunkeraachenCLICK").click(function s(){
-                                $("#musikbunkeraachen").toggle();
-                                $("#musikbunkeraachenEVENTS").toggle();
-      });
-                        $("#hoeuropaEVENTS").hide();
-     $("#hoeuropaCLICK").click(function s(){
-                                $("#hoeuropa").toggle();
-                                $("#hoeuropaEVENTS").toggle();
-      });
-                        $("#fraichevaalsEVENTS").hide();
-     $("#fraichevaalsCLICK").click(function s(){
-                                $("#fraichevaals").toggle();
-                                $("#fraichevaalsEVENTS").toggle();
-      });
-                            $("#kingzcornerEVENTS").hide();
-     $("#kingzcornerCLICK").click(function s(){
-                                $("#kingzcorner").toggle();
-                                $("#kingzcornerEVENTS").toggle();
-      });
-                            $("#azaachenbleibtEVENTS").hide();
-     $("#azaachenbleibtCLICK").click(function s(){
-                                $("#azaachenbleibt").toggle();
-                                $("#azaachenbleibtEVENTS").toggle();
-      });
-                              $("#NoxAachenEVENTS").hide();
-     $("#NoxAachenCLICK").click(function s(){
-                                $("#NoxAachen").toggle();
-                                $("#NoxAachenEVENTS").toggle();
-      });
-                            $("#ApolloAachenEVENTS").hide();
-     $("#ApolloAachenCLICK").click(function s(){
-                                $("#ApolloAachen").toggle();
-                                $("#ApolloAachenEVENTS").toggle();
-      });
-                              $("#nightlifeaachenEVENTS").hide();
-     $("#nightlifeaachenCLICK").click(function s(){
-                                $("#nightlifeaachen").toggle();
-                                $("#nightlifeaachenEVENTS").toggle();
-      });
-                              $("#starfishaachenEVENTS").hide();
-     $("#starfishaachenCLICK").click(function s(){
-                                $("#starfishaachen").toggle();
-                                $("#starfishaachenEVENTS").toggle();
-      });
-                            $("#kaixersEVENTS").hide();
-     $("#kaixersCLICK").click(function s(){
-                                $("#kaixers").toggle();
-                                $("#kaixersEVENTS").toggle();
-      });
-      
+    /*/
+    $("iframe[id*='EVENTS'").hide();
+    $("div[id*='CLICK'").each(function(i, obj){
+        $("#"+$(this).attr('id')).click(function s(){
+          var club = $(this).attr('id').slice(0,-5);
+          $("#"+club).toggle();
+          $("#"+club+"EVENTS").toggle();
+        });
+    });
 
-                        $("#GewoelbeklubEVENTS").hide();
-     $("#GewoelbeklubCLICK").click(function s(){
-                                $("#Gewoelbeklub").toggle();
-                                $("#GewoelbeklubEVENTS").toggle();
-      });
-                        $("#ArtheaterEVENTS").hide();
-     $("#ArtheaterCLICK").click(function s(){
-                                $("#Artheater").toggle();
-                                $("#ArtheaterEVENTS").toggle();
-      });
-                        $("#heinzgaul197EVENTS").hide();
-     $("#heinzgaul197CLICK").click(function s(){
-                                $("#heinzgaul197").toggle();
-                                $("#heinzgaul197EVENTS").toggle();
-      });
-                        $("#odonienEVENTS").hide();
-     $("#odonienCLICK").click(function s(){
-                                $("#odonien").toggle();
-                                $("#odonienEVENTS").toggle();
-      });
-                        $("#roxykoelnEVENTS").hide();
-     $("#roxykoelnCLICK").click(function s(){
-                                $("#roxykoeln").toggle();
-                                $("#roxykoelnEVENTS").toggle();
-      });
-
-                        $("#ReinekeFuchsCologneEVENTS").hide();
-     $("#ReinekeFuchsCologneCLICK").click(function s(){
-                                $("#ReinekeFuchsCologne").toggle();
-                                $("#ReinekeFuchsCologneEVENTS").toggle();
-      });
-                        $("#nachtigallehrenfeldEVENTS").hide();
-     $("#nachtigallehrenfeldCLICK").click(function s(){
-                                $("#nachtigallehrenfeld").toggle();
-                                $("#nachtigallehrenfeldEVENTS").toggle();
-      });
-                            $("#RedCatKoelnEVENTS").hide();
-     $("#RedCatKoelnCLICK").click(function s(){
-                                $("#RedCatKoeln").toggle();
-                                $("#RedCatKoelnEVENTS").toggle();
-      });
-                        $("#thelabmaastrichtEVENTS").hide();
-     $("#thelabmaastrichtCLICK").click(function s(){
-                                $("#thelabmaastricht").toggle();
-                                $("#thelabmaastrichtEVENTS").toggle();
-      });
-                        $("#complexmaastrichtEVENTS").hide();
-     $("#complexmaastrichtCLICK").click(function s(){
-                                $("#complexmaastricht").toggle();
-                                $("#complexmaastrichtEVENTS").toggle();
-      });
-                        $("#claydrummaastrichtEVENTS").hide();
-     $("#claydrummaastrichtCLICK").click(function s(){
-                                $("#claydrummaastricht").toggle();
-                                $("#claydrummaastrichtEVENTS").toggle();
-      });
-                        $("#muziekgieterijEVENTS").hide();
-     $("#muziekgieterijCLICK").click(function s(){
-                                $("#muziekgieterij").toggle();
-                                $("#muziekgieterijEVENTS").toggle();
-      });
-
-                        $("#bonnefooiEVENTS").hide();
-     $("#bonnefooiCLICK").click(function s(){
-                                $("#bonnefooi").toggle();
-                                $("#bonnefooiEVENTS").toggle();
-      });
-
-                        $("#fusebrusselsEVENTS").hide();
-     $("#fusebrusselsCLICK").click(function s(){
-                                $("#fusebrussels").toggle();
-                                $("#fusebrusselsEVENTS").toggle();
-      });
-                        $("#ConcreteParisEVENTS").hide();
-     $("#ConcreteParisCLICK").click(function s(){
-                                $("#ConcreteParis").toggle();
-                                $("#ConcreteParisEVENTS").toggle();
-      });
-     $("#mszufriedenheitEVENTS").hide();
-     $("#mszufriedenheitCLICK").click(function s(){
-                                $("#mszufriedenheit").toggle();
-                                $("#mszufriedenheitEVENTS").toggle();
-      });
-     $("#waldschenkedornheimEVENTS").hide();
-     $("#waldschenkedornheimCLICK").click(function s(){
-                                $("#waldschenkedornheim").toggle();
-                                $("#waldschenkedornheimEVENTS").toggle();
-      });
 	/*
     //Scroll up button
     //
@@ -243,13 +109,12 @@ $(document).ready(function(){
         $("html, body").animate({scrollTop: 0}, 1300);
     });
 				
-	/*
-    //Light off button
-    //
-    */
-    var l = 0x0; //initialize to turn light off
-    var fc = 0xf; //initialize to make font color white
-
+  /*
+  //Light off button
+  //
+  */
+  var l = 0x0; //initialize to turn light off
+  var fc = 0xf; //initialize to make font color white
   $("#but").click(function s(){
     //initial state causes
     //black (paint = 000000) paint color and
@@ -300,13 +165,13 @@ $(document).ready(function(){
 <input id="but"type="button" value="&#x1F453;" class="but"></input>
 </br>
 <div class="container">
-<div class="holderCITY">
+
     <div class="city">
       <h2 class="pull-left" title="aachen">Aachen.</h2>
       <a target="_blank" id="/de/cologne" class="ra ralogo-ffffff pull-right" ></a>
     </div>
     <!--musikbunker-->
-         
+    <div class="holderCITY">
     <div class="holder">
             <iframe class="aachen" id="musikbunkeraachen" src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fmusikbunkeraachen%2F&tabs&width=500&height=70&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=false&appId" width="500" height="70" style="border:none;overflow:hidden;" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
 

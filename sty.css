@@ -7,6 +7,14 @@ body{
  min-height: 100vh;
  background-color: white;
 }
+.container{
+height:100%;
+width: 100%;
+margin-bottom:20px;
+margin-left: auto;
+margin-right: auto;
+display: inline-block;
+ }
 .bar{
 position:absolute;
 top:0;
@@ -33,25 +41,26 @@ transform: translate(-50%,-50%);
     white-space: normal; /*Prevents child elements from inheriting nowrap.*/
     float: left;
     position:relative;
+    min-width:  180px;
+    max-width: 500px;
 }
 .holderCITY{
-    display: block;
+    display: grid;
+    height:100%;
+    width: 100%;
+    grid-gap: 3px;
+    grid-template-columns: repeat(auto-fit, 500px);
     vertical-align: top; /*Makes sure all the divs are correctly aligned.*/
     white-space: normal; /*Prevents child elements from inheriting nowrap.*/
     position:relative;
 }
+
 .frame{
     width: 100%;
     height:100%;
     background :blue;
 }
-.container{
-height:100%;
- display: inline-block;
- margin-bottom:20px;
-      margin-left: auto;
-    margin-right: auto;
- }
+
  .but {
  background-color: white;
  font-size: 1.5em;
