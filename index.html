@@ -20,7 +20,7 @@ $(window).on("load", function() {
 	//	alert("hihi");
 	//	alert($("iframe[class*='aachen'][id*='EVENTS']").css('display'));
     $("div[class*='holderCITY'").hide();
-    $(".holder iframe:not([id*='EVENTS'])").addClass('holder-background');
+    $("iframe:not([id*='EVENTS'])").addClass('holder-background');
 
 });
 
@@ -69,10 +69,18 @@ jQuery.fn.toggleVisibility = function() {
     //Toggle a whole city button
     //
     */
+    var randomColor = "#"+((1<<24)*Math.random()|0).toString(16);
     $("h2").click(function s(){
-        var c = $( this ).attr( "title" ) + "CITY";
+        var t = $(this).attr( "title" );
+        var c = t + "CITY";
         $("div[class*="+c+"]").fadeToggle();
         $(this).toggleClass("special");
+        $("h2").attr('color', randomColor+" !important");
+        randomColor = "#"+((1<<24)*Math.random()|0).toString(16);
+    });
+    $("h2").hover(function s(){
+        $("h2").attr('color', randomColor+" !important");
+        randomColor = "#"+((1<<24)*Math.random()|0).toString(16);
     });
 
 	/*
@@ -84,7 +92,7 @@ jQuery.fn.toggleVisibility = function() {
           var club = $(this).attr('id').slice(0,-5);
           $("#"+club).toggle();
           $("#"+club+"EVENTS").toggle();
-          $("iframe[id*='EVENTS'").toggleClass('noevent-background');
+          $("#"+club+"EVENTS").toggleClass('noevent-background');
         });
     });
 
@@ -171,8 +179,9 @@ jQuery.fn.toggleVisibility = function() {
 <div class="container">
 
     <div class="city">
-      <h2 class="pull-left" title="adam">Amsterdam.</h2>
-      <a target="_blank" id="/nl/amsterdam" class="ra ralogo-ffffff pull-right" ></a>
+      <span class="tblcl h2"><h2 class="pull-left" title="adam">Amsterdam.<span class="h2after">jojo</span></h2></span>
+      <span class="tblcl h3"><button>show all</button></span>
+      <span class="ra ralogo-ffffff pull-right"><a target="_blank" id="/nl/amsterdam" class="ra ralogo-ffffff pull-right" ></a></span>
     </div>
     <!--musikbunker-->
     <div class="holderCITY adamCITY">
@@ -188,12 +197,12 @@ jQuery.fn.toggleVisibility = function() {
 </div><!--end of Container-->
 
 
-
 <div class="container">
 
     <div class="city">
-      <h2 class="pull-left" title="aachen">Aachen.</h2>
-      <a target="_blank" id="/de/cologne" class="ra ralogo-ffffff pull-right" ></a>
+        <span class="tblcl h2"><h2 class="pull-left" title="aachen">Aachen.<span class="h2after">jojo</span></h2></span>
+        <span class="tblcl h3"><button>show all</button></span>
+      <span class="ra ralogo-ffffff pull-right"><a target="_blank" id="/de/cologne" class="ra ralogo-ffffff pull-right" ></a></span>
     </div>
     <!--musikbunker-->
     <div class="holderCITY aachenCITY">
@@ -279,13 +288,14 @@ jQuery.fn.toggleVisibility = function() {
 </div><!--end of Container-->
 
 
-
-
 <div class="container">
 <div class="city">
-  <h2 class="pull-left" title="koeln">Köln.</h2>
-    <a target="_blank" id="/de/cologne" class="ra ralogo-ffffff pull-right" ></a>
-    <a target="_blank" id="cologne" class="ohell" href="https://koeln.ohschonhell.de/" ><span class="oh">OH</span> SCHON HELL</a>
+  <span class="tblcl h2"><h2 class="pull-left" title="koeln">Köln.</h2></span><span class="tblcl h2after">jojo</span>
+      <span class="tblcl h3"><button>show all</button></span>
+      <span class="tblcl">
+          <a target="_blank" id="cologne" class="ohell" href="https://koeln.ohschonhell.de/" ><span class="oh">OH</span> SCHON HELL</a></span>
+      <span class="tblcl ra ralogo-ffffff pull-right">
+          <a target="_blank" id="/de/cologne" class="ra ralogo-ffffff pull-right" ></a></span>
  </div>
 
  <div class="holderCITY koelnCITY">
@@ -353,17 +363,13 @@ jQuery.fn.toggleVisibility = function() {
 </div><!--end of Container-->
 </div>
 
-
-
-
-
-
-
-
 <div class="container">
 <div class="city">
-  <h2 class="pull-left" title="maastricht">Maastricht.</h2>
-  <a target="_blank" id="/nl/otherregions" class="ra ralogo-ffffff pull-right" ></a>
+  <span class="tblcl h2"><h2 class="pull-left" title="maastricht">Maastricht.
+      <span class="h2after">jojo</span></h2></span>
+      <span class="tblcl h3"><button>show all</button></span>
+      <span class="ra ralogo-ffffff pull-right">
+          <a target="_blank" id="/nl/otherregions" class="ra ralogo-ffffff pull-right" ></a></span>
  </div>
 <div class="holderCITY maastrichtCITY">
 
@@ -404,10 +410,11 @@ jQuery.fn.toggleVisibility = function() {
 </div>
 
 <div class="container">
-
     <div class="city">
-      <h2 class="pull-left" title="utrecht">Utrecht.</h2>
-      <a target="_blank" id="/nl/utrecht" class="ra ralogo-ffffff pull-right" ></a>
+      <span class="tblcl h2"><h2 class="pull-left" title="utrecht">Utrecht.<span class="h2after">jojo</span></h2></span>
+      <span class="tblcl h3"><button>show all</button></span>
+      <span class="ra ralogo-ffffff pull-right">
+          <a target="_blank" id="/nl/utrecht" class="ra ralogo-ffffff pull-right" ></a></span>
     </div>
     <!--musikbunker-->
     <div class="holderCITY utrechtCITY">
@@ -424,8 +431,10 @@ jQuery.fn.toggleVisibility = function() {
 
 <div class="container">
 <div class="city">
-  <h2 class="pull-left" title="bruessel">Brüssel.</h2>
-  <a target="_blank" id="/be/brussels" class="ra ralogo-ffffff pull-right" ></a>
+  <span class="tblcl h2"><h2 class="pull-left" title="bruessel">Brüssel.<span class="h2after">jojo</span></h2></span>
+      <span class="tblcl h3"><button>show all</button></span>
+      <span class="ra ralogo-ffffff pull-right">
+          <a target="_blank" id="/be/brussels" class="ra ralogo-ffffff pull-right" ></a></span>
  </div>
 
 <div class="holderCITY bruesselCITY">
@@ -447,10 +456,13 @@ jQuery.fn.toggleVisibility = function() {
 </div><!--end of Container-->
 </div>
 
- <div class="container">
+<div class="container">
 <div class="city">
-  <h2 class="pull-left" title="paris">Paris.</h2>
-  <a target="_blank" id="/fr/paris" class="ra ralogo-ffffff pull-right" ></a>
+  <span class="tblcl h2"><h2 class="pull-left" title="paris">Paris.
+      <span class="h2after">jojo</span></h2></span>
+      <span class="tblcl h3"><button>show all</button></span>
+      <span class="ra ralogo-ffffff pull-right">
+          <a target="_blank" id="/fr/paris" class="ra ralogo-ffffff pull-right" ></a></span>
  </div>
 <div class="holderCITY parisCITY">
  <div class="holder">
@@ -465,8 +477,10 @@ jQuery.fn.toggleVisibility = function() {
 
 <div class="container">
 <div class="city">
-  <h2 class="pull-left" title="wue">Würzburg.</h2>
-  <a target="_blank" id="/de/bavaria" class="ra ralogo-ffffff pull-right" ></a>
+  <span class="tblcl h2"><h2 class="pull-left" title="wue">Würzburg.<span class="h2after">jojo</span></h2></span>
+      <span class="tblcl h3"><button>show all</button></span>
+      <span class="ra ralogo-ffffff pull-right">
+          <a target="_blank" id="/de/bavaria" class="ra ralogo-ffffff pull-right" ></a></span>
  </div>
 <div class="holderCITY wueCITY">
  <div class="holder">
