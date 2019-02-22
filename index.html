@@ -3,7 +3,7 @@
 <head>
  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
  <title>fb-Veranstaltungen</title>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
   <link rel="stylesheet" type="text/css" href="sty.css">
 </head>
 <body>
@@ -16,152 +16,10 @@
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));
 
-$(window).on("load", function() {
-	//	alert("hihi");
-	//	alert($("iframe[class*='aachen'][id*='EVENTS']").css('display'));
-    $("div[class*='holderCITY'").hide();
-    $(".holder iframe:not([id*='EVENTS'])").addClass('holder-background');
 
-});
-
-
-$(document).ready(function(){
-    /*
-    //Toggle all clubs of a city button
-    //
-    */
-    /*
-    jQuery.fn.visible = function() {
-    return this.css('visibility', 'visible');
-};
-
-jQuery.fn.invisible = function() {
-    return this.css('visibility', 'hidden');
-};
-
-jQuery.fn.toggleVisibility = function() {
-    return this.css('visibility', function(i, visibility) {
-        return (visibility == 'visible') ? 'hidden' : 'visible';
-    });
-};
-
-    $("div[class*='aufzu']").click(function s(){
-        var c = $( this ).attr( "title" );
-        var action = "hide";
-        $("iframe[class*="+c+"][id*='EVENTS']").each(function(i, obj){
-                if ( $(this).css('display') == 'none'  ){
-                    action = "show";
-                    return;
-                }
-        });
-        if ( action == 'show'  ){
-            $("iframe[class*="+c+"][id*='EVENTS']").show();
-            $("iframe[class*="+c+"]:not([id*='EVENTS'])").hide();
-            $(this).toggleClass("special");
-        }
-        else{
-            $("iframe[class*="+c+"][id*='EVENTS']").hide();
-            $("iframe[class*="+c+"]:not([id*='EVENTS'])").show();
-            $(this).toggleClass("special");
-        }
-    });
-    /*
-    //Toggle a whole city button
-    //
-    */
-    $("h2").click(function s(){
-        var c = $( this ).attr( "title" ) + "CITY";
-        $("div[class*="+c+"]").fadeToggle();
-        $(this).toggleClass("special");
-    });
-
-	/*
-    //boxes with fb-events
-    /*/
-    $("iframe[id*='EVENTS'").hide();
-    $("div[id*='CLICK'").each(function(i, obj){
-        $("#"+$(this).attr('id')).click(function s(){
-          var club = $(this).attr('id').slice(0,-5);
-          $("#"+club).toggle();
-          $("#"+club+"EVENTS").toggle();
-          $("iframe[id*='EVENTS'").toggleClass('noevent-background');
-        });
-    });
-
-	/*
-    //Scroll up button
-    //
-    */
-    $(window).scroll(function() {
-        if ($(this).scrollTop()) {
-            $("#toTop").fadeIn("slow", "swing");
-        } else {
-            $("#toTop").fadeOut("slow", "swing");
-        }
-        if($(window).scrollTop() + $(window).height() < $(document).height() - $("#footer").height()) {
-            //$('#toTop').css("position","fixed");    //resetting it
-            $('#toTop').css("bottom","0"); //resetting it
-        }
-        if($(window).scrollTop() + $(window).height() > $(document).height() - $("#footer").height()) {
-            //$('#toTop').css("position","relative"); // make it related
-            $('#toTop').css("bottom","8px"); // 60 px, height of #toTop
-        }
-    });
-    $("#toTop").click(function() {
-        $("html, body").animate({scrollTop: 0}, 1300);
-    });
-				
-  /*
-  //Light off button
-  //
-  */
-  var l = 0x0; //initialize to turn light off
-  var fc = 0xf; //initialize to make font color white
-  $("#but").click(function s(){
-    //initial state causes
-    //black (paint = 000000) paint color and
-    //inverted color white (invert = ffffff)
-    var paint = l.toString(16)
-    +l.toString(16)+l.toString(16)+l.toString(16)+l.toString(16)+l.toString(16);
-    var invert = fc.toString(16)
-    +fc.toString(16)+fc.toString(16)+fc.toString(16)+fc.toString(16)+fc.toString(16);
-
-    //change colors and icons
-    $("a.ra").removeClass("ralogo-"+invert); $("a.ra").addClass("ralogo-"+paint);
-    $("body").css("background-color", "#"+paint);
-    $("a.ohell").toggleClass('ohellcolor');
-    $("span.oh").toggleClass('ohcolor');
-    $("body").css("color", "#"+invert);
-    $(":after").css("color", "#"+invert);
-    var styleElem = document.head.appendChild(document.createElement("style"));
-    styleElem.innerHTML = "h2:after {color: "+"#"+invert+" !important;}";
-    if ( l == 0 ) {
-        $(this).val('☀');
-        $(this).css("color","orange");
-    }
-    else{
-        $(this).val('👓');
-        //$(this).css("background-color","black");
-        }
-    //apply new switch state
-    fc = l;
-    l = Math.abs(l - 0xf);
-  });
-
-
-    /*
-    //Resident Advisor button
-    //
-    */
-    var MyDate = new Date();
-    var MyDateString;
-    MyDateString = MyDate.getFullYear() + '-' + ('0' + (MyDate.getMonth()+1)).slice(-2) + '-' + ('0' + MyDate.getDate()).slice(-2);
-    $("a[class*='ra']").each(function(i, obj){
-      $(this).attr('href', "https://www.residentadvisor.net/events"+$(this).attr('id')+"/week/"+MyDateString);
-    });	
-});
 </script>
-
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="./fbv.js"></script>
     
     
     
@@ -171,7 +29,7 @@ jQuery.fn.toggleVisibility = function() {
 <div class="container">
 
     <div class="city">
-      <h2 class="pull-left" title="adam">Amsterdam.</h2>
+      <h2 class="pull-left" title="adam">Amsterdam.</h2><button name="adam" class="clubsButton">toggle all</button>
       <a target="_blank" id="/nl/amsterdam" class="ra ralogo-ffffff pull-right" ></a>
     </div>
     <!--musikbunker-->
@@ -192,7 +50,7 @@ jQuery.fn.toggleVisibility = function() {
 <div class="container">
 
     <div class="city">
-      <h2 class="pull-left" title="aachen">Aachen.</h2>
+      <h2 class="pull-left" title="aachen">Aachen.</h2><button name="aachen" class="clubsButton">toggle all</button>
       <a target="_blank" id="/de/cologne" class="ra ralogo-ffffff pull-right" ></a>
     </div>
     <!--musikbunker-->
@@ -283,7 +141,7 @@ jQuery.fn.toggleVisibility = function() {
 
 <div class="container">
 <div class="city">
-  <h2 class="pull-left" title="koeln">Köln.</h2>
+  <h2 class="pull-left" title="koeln">Köln.</h2><button name="koeln" class="clubsButton">toggle all</button>
     <a target="_blank" id="/de/cologne" class="ra ralogo-ffffff pull-right" ></a>
     <a target="_blank" id="cologne" class="ohell" href="https://koeln.ohschonhell.de/" ><span class="oh">OH</span> SCHON HELL</a>
  </div>
@@ -362,7 +220,7 @@ jQuery.fn.toggleVisibility = function() {
 
 <div class="container">
 <div class="city">
-  <h2 class="pull-left" title="maastricht">Maastricht.</h2>
+  <h2 class="pull-left" title="maastricht">Maastricht.</h2><button name="maastricht" class="clubsButton">toggle all</button>
   <a target="_blank" id="/nl/otherregions" class="ra ralogo-ffffff pull-right" ></a>
  </div>
 <div class="holderCITY maastrichtCITY">
@@ -406,7 +264,7 @@ jQuery.fn.toggleVisibility = function() {
 <div class="container">
 
     <div class="city">
-      <h2 class="pull-left" title="utrecht">Utrecht.</h2>
+      <h2 class="pull-left" title="utrecht">Utrecht.</h2><button name="utrecht" class="clubsButton">toggle all</button>
       <a target="_blank" id="/nl/utrecht" class="ra ralogo-ffffff pull-right" ></a>
     </div>
     <!--musikbunker-->
@@ -424,7 +282,7 @@ jQuery.fn.toggleVisibility = function() {
 
 <div class="container">
 <div class="city">
-  <h2 class="pull-left" title="bruessel">Brüssel.</h2>
+  <h2 class="pull-left" title="bruessel">Brüssel.</h2><button name="bruessel" class="clubsButton">toggle all</button>
   <a target="_blank" id="/be/brussels" class="ra ralogo-ffffff pull-right" ></a>
  </div>
 
@@ -449,7 +307,7 @@ jQuery.fn.toggleVisibility = function() {
 
  <div class="container">
 <div class="city">
-  <h2 class="pull-left" title="paris">Paris.</h2>
+  <h2 class="pull-left" title="paris">Paris.</h2><button name="paris" class="clubsButton">toggle all</button>
   <a target="_blank" id="/fr/paris" class="ra ralogo-ffffff pull-right" ></a>
  </div>
 <div class="holderCITY parisCITY">
@@ -465,7 +323,7 @@ jQuery.fn.toggleVisibility = function() {
 
 <div class="container">
 <div class="city">
-  <h2 class="pull-left" title="wue">Würzburg.</h2>
+  <h2 class="pull-left" title="wue">Würzburg.</h2><button name="wue" class="clubsButton">toggle all</button>
   <a target="_blank" id="/de/bavaria" class="ra ralogo-ffffff pull-right" ></a>
  </div>
 <div class="holderCITY wueCITY">

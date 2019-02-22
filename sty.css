@@ -7,6 +7,17 @@ body{
  min-height: 100vh;
  background-color: white;
 }
+.clubsButton {
+    margin-left: 27%;
+    visibility: hidden;
+}
+.clubsButton:target {
+    color: white;
+    background: black;
+}
+.toggleClubsButton{
+
+ }
 .container{
 height:100%;
 width: 100%;
